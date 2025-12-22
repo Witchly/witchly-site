@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             document.getElementById("footer-placeholder").innerHTML = data;
             
-            // Update Copyright Year automatically
+            // Update Copyright Year
             const yearSpan = document.getElementById("copyright-year");
             if(yearSpan) {
                 yearSpan.innerText = new Date().getFullYear();
@@ -47,13 +47,23 @@ function initializeMobileMenu() {
 
 // Function to highlight the current page in the Navbar
 function highlightActiveLink() {
-    const currentPath = window.location.pathname;
+    // Get current filename (e.g. "pricing.html")
+    let currentPage = window.location.pathname.split("/").pop();
+    
+    // Handle root URL (e.g. witchly.host/)
+    if (currentPage === "" || currentPage === undefined) currentPage = "index.html"; 
+
     const navLinks = document.querySelectorAll('#desktop-menu-links a');
 
     navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
-            link.classList.remove('text-gray-300');
-            link.classList.add('text-white', 'text-witchly-primary'); // Highlight color
+        const linkHref = link.getAttribute('href');
+        
+        // Remove slash if present in href for comparison (e.g. "/pricing.html" -> "pricing.html")
+        const cleanLinkHref = linkHref.replace(/^\//, '');
+
+        if (cleanLinkHref === currentPage || (currentPage === "index.html" && cleanLinkHref === "index.html")) {
+            link.classList.remove('text-gray-300', 'hover:text-white');
+            link.classList.add('text-white', 'text-witchly-primary', 'font-bold');
         }
     });
 }

@@ -12,7 +12,16 @@
             theme: { 
                 extend: { 
                     fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, 
-                    colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6', accent: '#4ade80' } }
+                    colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6', accent: '#4ade80' } },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+                    }
                 } 
             } 
         }
@@ -20,6 +29,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-witchly-base text-gray-200 font-sans antialiased">
+    
     <div id="navbar-placeholder"></div>
 
     <main class="pt-32 pb-20 max-w-7xl mx-auto px-4">
@@ -73,9 +83,9 @@
 
         <div class="flex justify-center mb-12">
             <div class="bg-gray-800 p-1 rounded-lg inline-flex shadow-lg">
-                <button onclick="togglePricing('minecraft')" id="btn-mc" class="px-6 py-2 rounded text-sm font-bold transition-all bg-witchly-primary text-white shadow-md"><i class="fa-solid fa-cube mr-2"></i> Minecraft</button>
-                <button onclick="togglePricing('rust')" id="btn-rust" class="px-6 py-2 rounded text-sm font-bold text-gray-400 hover:text-white transition-all"><i class="fa-solid fa-radiation mr-2"></i> Rust</button>
-                <button onclick="togglePricing('palworld')" id="btn-pal" class="px-6 py-2 rounded text-sm font-bold text-gray-400 hover:text-white transition-all"><i class="fa-solid fa-dragon mr-2"></i> Palworld</button>
+                <button onclick="manualToggle('minecraft')" id="btn-mc" class="px-6 py-2 rounded text-sm font-bold transition-all bg-witchly-primary text-white shadow-md"><i class="fa-solid fa-cube mr-2"></i> Minecraft</button>
+                <button onclick="manualToggle('rust')" id="btn-rust" class="px-6 py-2 rounded text-sm font-bold text-gray-400 hover:text-white transition-all"><i class="fa-solid fa-radiation mr-2"></i> Rust</button>
+                <button onclick="manualToggle('palworld')" id="btn-pal" class="px-6 py-2 rounded text-sm font-bold text-gray-400 hover:text-white transition-all"><i class="fa-solid fa-dragon mr-2"></i> Palworld</button>
             </div>
         </div>
 
@@ -90,7 +100,7 @@
                     <li class="flex items-center"><i class="fa-solid fa-check text-witchly-primary mr-3"></i> Uncapped Standard CPU</li>
                     <li class="flex items-center"><i class="fa-solid fa-check text-witchly-primary mr-3"></i> 20 GB NVMe Storage</li>
                 </ul>
-                <a href="#" class="w-full py-3 text-center border border-gray-600 rounded-lg text-white font-bold hover:bg-white hover:text-black transition-all">Select Plan</a>
+                <a href="https://panel.witchly.host/cart.php?a=add&pid=1" class="w-full py-3 text-center border border-gray-600 rounded-lg text-white font-bold hover:bg-white hover:text-black transition-all">Select Plan</a>
             </div>
 
             <div id="plan-mc-8gb" class="plan-card bg-witchly-surface p-8 rounded-xl border-2 border-witchly-primary relative transform md:-translate-y-4 shadow-xl flex flex-col group">
@@ -104,7 +114,7 @@
                     <li class="flex items-center"><i class="fa-solid fa-check text-witchly-accent mr-3"></i> High Priority CPU</li>
                     <li class="flex items-center"><i class="fa-solid fa-check text-witchly-accent mr-3"></i> 50 GB NVMe Storage</li>
                 </ul>
-                <a href="#" class="w-full py-3 text-center bg-witchly-primary rounded-lg text-white font-bold hover:bg-witchly-primaryHover transition-all shadow-lg">Select Plan</a>
+                <a href="https://panel.witchly.host/cart.php?a=add&pid=2" class="w-full py-3 text-center bg-witchly-primary rounded-lg text-white font-bold hover:bg-witchly-primaryHover transition-all shadow-lg">Select Plan</a>
             </div>
 
             <div id="plan-mc-16gb" class="plan-card bg-witchly-surface p-8 rounded-xl border border-gray-700 transition-all flex flex-col relative group">
@@ -117,11 +127,11 @@
                     <li class="flex items-center"><i class="fa-solid fa-check text-witchly-primary mr-3"></i> Extreme Priority CPU</li>
                     <li class="flex items-center"><i class="fa-solid fa-check text-witchly-primary mr-3"></i> Dedicated IP (25565)</li>
                 </ul>
-                <a href="#" class="w-full py-3 text-center border border-gray-600 rounded-lg text-white font-bold hover:bg-white hover:text-black transition-all">Select Plan</a>
+                <a href="https://panel.witchly.host/cart.php?a=add&pid=3" class="w-full py-3 text-center border border-gray-600 rounded-lg text-white font-bold hover:bg-white hover:text-black transition-all">Select Plan</a>
             </div>
         </div>
 
-        <div id="pricing-rust" class="hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div id="pricing-rust" class="hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto animate-fade-in-up">
             <div id="plan-rust-10gb" class="plan-card bg-witchly-surface p-8 rounded-xl border border-gray-700 transition-all relative">
                 <div class="rec-badge hidden absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg uppercase tracking-wider z-20">Recommended</div>
                 <h3 class="text-xl font-bold text-white">The Radtown</h3>
@@ -130,7 +140,7 @@
                     <li class="flex items-center"><i class="fa-solid fa-check text-orange-500 mr-3"></i> 10 GB RAM</li>
                     <li class="flex items-center"><i class="fa-solid fa-check text-orange-500 mr-3"></i> Uncapped CPU</li>
                 </ul>
-                <a href="#" class="block w-full py-3 text-center border border-gray-600 rounded-lg text-white font-bold hover:bg-white hover:text-black transition-all">Deploy Now</a>
+                <a href="https://panel.witchly.host/cart.php?a=add&pid=4" class="block w-full py-3 text-center border border-gray-600 rounded-lg text-white font-bold hover:bg-white hover:text-black transition-all">Deploy Now</a>
             </div>
             
             <div id="plan-rust-16gb" class="plan-card bg-witchly-surface p-8 rounded-xl border border-orange-600 relative shadow-lg">
@@ -141,11 +151,11 @@
                     <li class="flex items-center"><i class="fa-solid fa-check text-orange-500 mr-3"></i> 16 GB RAM</li>
                     <li class="flex items-center"><i class="fa-solid fa-check text-orange-500 mr-3"></i> High Priority CPU</li>
                 </ul>
-                <a href="#" class="block w-full py-3 text-center bg-orange-600 rounded-lg text-white font-bold hover:bg-orange-700 transition-all">Deploy Now</a>
+                <a href="https://panel.witchly.host/cart.php?a=add&pid=5" class="block w-full py-3 text-center bg-orange-600 rounded-lg text-white font-bold hover:bg-orange-700 transition-all">Deploy Now</a>
             </div>
         </div>
 
-        <div id="pricing-palworld" class="hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div id="pricing-palworld" class="hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto animate-fade-in-up">
             <div id="plan-pal-10gb" class="plan-card bg-witchly-surface p-8 rounded-xl border border-gray-700 transition-all relative">
                 <div class="rec-badge hidden absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg uppercase tracking-wider z-20">Recommended</div>
                 <h3 class="text-xl font-bold text-white">Assembly Line</h3>
@@ -154,7 +164,7 @@
                     <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 mr-3"></i> 10 GB RAM</li>
                     <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 mr-3"></i> Auto-Restart Script</li>
                 </ul>
-                <a href="#" class="block w-full py-3 text-center border border-gray-600 rounded-lg text-white font-bold hover:bg-white hover:text-black transition-all">Deploy Now</a>
+                <a href="https://panel.witchly.host/cart.php?a=add&pid=6" class="block w-full py-3 text-center border border-gray-600 rounded-lg text-white font-bold hover:bg-white hover:text-black transition-all">Deploy Now</a>
             </div>
             
             <div id="plan-pal-16gb" class="plan-card bg-witchly-surface p-8 rounded-xl border border-blue-600 relative shadow-lg">
@@ -165,14 +175,50 @@
                     <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 mr-3"></i> 16 GB RAM</li>
                     <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 mr-3"></i> No-Wipe Guarantee</li>
                 </ul>
-                <a href="#" class="block w-full py-3 text-center bg-blue-600 rounded-lg text-white font-bold hover:bg-blue-700 transition-all">Deploy Now</a>
+                <a href="https://panel.witchly.host/cart.php?a=add&pid=7" class="block w-full py-3 text-center bg-blue-600 rounded-lg text-white font-bold hover:bg-blue-700 transition-all">Deploy Now</a>
             </div>
         </div>
     </main>
+
     <div id="footer-placeholder"></div>
+    
     <script src="js/main.js"></script>
     
     <script>
+        // Define the toggle function globally so buttons can use it
+        window.togglePricing = function(game) {
+            // 1. Hide all sections
+            document.getElementById('pricing-minecraft').classList.add('hidden');
+            document.getElementById('pricing-rust').classList.add('hidden');
+            document.getElementById('pricing-palworld').classList.add('hidden');
+
+            // 2. Show selected section
+            const target = document.getElementById(`pricing-${game}`);
+            if(target) target.classList.remove('hidden');
+
+            // 3. Reset all buttons
+            ['btn-mc', 'btn-rust', 'btn-pal'].forEach(id => {
+                const btn = document.getElementById(id);
+                btn.classList.remove('bg-witchly-primary', 'text-white', 'shadow-md');
+                btn.classList.add('text-gray-400');
+            });
+
+            // 4. Highlight active button
+            let activeBtnId = 'btn-mc';
+            if(game === 'rust') activeBtnId = 'btn-rust';
+            if(game === 'palworld') activeBtnId = 'btn-pal';
+            
+            const activeBtn = document.getElementById(activeBtnId);
+            activeBtn.classList.remove('text-gray-400');
+            activeBtn.classList.add('bg-witchly-primary', 'text-white', 'shadow-md');
+        }
+
+        // Wrapper to sync dropdown with buttons
+        function manualToggle(game) {
+            document.getElementById('calc-game').value = game; // Sync dropdown
+            calculatePlan(); // Recalculate logic
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const urlGame = urlParams.get('game');
@@ -185,7 +231,8 @@
                 calculatePlan();
 
                 setTimeout(() => {
-                    document.getElementById(`pricing-${urlGame}`).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const el = document.getElementById(`pricing-${urlGame}`);
+                    if(el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 500);
             } else {
                 calculatePlan();
@@ -208,27 +255,29 @@
             const playerDisplay = document.getElementById('calc-player-display');
             const typeContainer = document.getElementById('calc-type-container');
 
+            // Update display text
             playerDisplay.innerText = players + (players === 50 ? '+' : '');
 
+            // Handle Type Selector Visibility
             if (game === 'minecraft') {
                 typeContainer.classList.remove('opacity-50', 'pointer-events-none');
             } else {
                 typeContainer.classList.add('opacity-50', 'pointer-events-none');
             }
 
+            // Trigger the Toggle Logic
             window.togglePricing(game);
 
+            // Logic to Recommend a Plan
             let recId = '';
             if (game === 'minecraft') {
-                const urlParams = new URLSearchParams(window.location.search);
-                const urlRec = urlParams.get('rec');
-
-                if(urlRec && parseInt(urlRec) >= 16) recId = 'plan-mc-16gb';
-                else if(urlRec && parseInt(urlRec) >= 8) recId = 'plan-mc-8gb';
-                else if(urlRec) recId = 'plan-mc-4gb';
-                else {
-                    if (type === 'heavy') recId = players > 15 ? 'plan-mc-16gb' : 'plan-mc-8gb';
-                    else recId = players <= 10 ? 'plan-mc-4gb' : (players <= 25 ? 'plan-mc-8gb' : 'plan-mc-16gb');
+                // If heavy modpack, recommend 8GB min
+                if (type === 'heavy') {
+                    recId = players > 15 ? 'plan-mc-16gb' : 'plan-mc-8gb';
+                } else {
+                    if (players <= 10) recId = 'plan-mc-4gb';
+                    else if (players <= 25) recId = 'plan-mc-8gb';
+                    else recId = 'plan-mc-16gb';
                 }
             } else if (game === 'rust') {
                 recId = players > 30 ? 'plan-rust-16gb' : 'plan-rust-10gb';
@@ -236,12 +285,14 @@
                 recId = players > 15 ? 'plan-pal-16gb' : 'plan-pal-10gb';
             }
 
+            // Remove Highlights
             document.querySelectorAll('.plan-card').forEach(card => {
                 card.classList.remove('ring-4', 'ring-green-500', 'shadow-[0_0_40px_rgba(34,197,94,0.3)]', 'scale-[1.02]');
                 const badge = card.querySelector('.rec-badge');
                 if(badge) badge.classList.add('hidden');
             });
 
+            // Add Highlights to Recommended Plan
             const targetCard = document.getElementById(recId);
             if (targetCard) {
                 targetCard.classList.add('ring-4', 'ring-green-500', 'shadow-[0_0_40px_rgba(34,197,94,0.3)]', 'scale-[1.02]');
