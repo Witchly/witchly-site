@@ -29,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function() {
             if(yearSpan) {
                 yearSpan.innerText = new Date().getFullYear();
             }
+
+            // Initialize Cookie Banner AFTER footer is loaded
+            initializeCookieBanner();
         })
         .catch(error => console.error("Error loading footer:", error));
 });
@@ -45,25 +48,19 @@ function initializeMobileMenu() {
     }
 }
 
-// FIXED: Robust Highlighting for Cloudflare Pages
+// Function to highlight active link (Cloudflare Pages compatible)
 function highlightActiveLink() {
-    // 1. Get current path and clean it (remove leading slash, trailing slash, and .html)
-    // e.g. "/pricing.html" -> "pricing"
-    // e.g. "/pricing"      -> "pricing"
     let currentPath = window.location.pathname
         .replace(/^\//, '')      // Remove leading slash
         .replace(/\/$/, '')      // Remove trailing slash
         .replace(/\.html$/, ''); // Remove .html extension
     
-    // Handle Root (Home Page)
     if (currentPath === "") currentPath = "index";
 
     const navLinks = document.querySelectorAll('#desktop-menu-links a');
 
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        
-        // 2. Clean the link href exactly the same way
         let cleanHref = href
             .replace(/^\//, '')
             .replace(/\/$/, '')
@@ -71,11 +68,33 @@ function highlightActiveLink() {
 
         if (cleanHref === "") cleanHref = "index";
 
-        // 3. Compare the cleaned versions
-        // This ensures "pricing" matches "pricing.html"
         if (currentPath === cleanHref) {
             link.classList.remove('text-gray-300', 'hover:text-white');
             link.classList.add('text-white', 'text-witchly-primary', 'font-bold');
         }
     });
+}
+
+// --- NEW: Cookie Consent Logic ---
+function initializeCookieBanner() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+
+    // Only run if elements exist and user hasn't accepted yet
+    if (banner && acceptBtn && !localStorage.getItem('witchly_cookie_consent')) {
+        
+        // Show banner after 1 second delay
+        setTimeout(() => {
+            // Remove the classes that hide it
+            banner.classList.remove('translate-y-full', 'opacity-0');
+        }, 1000);
+
+        // Handle Click
+        acceptBtn.addEventListener('click', () => {
+            // Save consent
+            localStorage.setItem('witchly_cookie_consent', 'true');
+            // Hide banner
+            banner.classList.add('translate-y-full', 'opacity-0');
+        });
+    }
 }
