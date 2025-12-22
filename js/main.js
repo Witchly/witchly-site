@@ -45,23 +45,35 @@ function initializeMobileMenu() {
     }
 }
 
-// Function to highlight the current page in the Navbar
+// FIXED: Robust Highlighting for Cloudflare Pages
 function highlightActiveLink() {
-    // Get current filename (e.g. "pricing.html")
-    let currentPage = window.location.pathname.split("/").pop();
+    // 1. Get current path and clean it (remove leading slash, trailing slash, and .html)
+    // e.g. "/pricing.html" -> "pricing"
+    // e.g. "/pricing"      -> "pricing"
+    let currentPath = window.location.pathname
+        .replace(/^\//, '')      // Remove leading slash
+        .replace(/\/$/, '')      // Remove trailing slash
+        .replace(/\.html$/, ''); // Remove .html extension
     
-    // Handle root URL (e.g. witchly.host/)
-    if (currentPage === "" || currentPage === undefined) currentPage = "index.html"; 
+    // Handle Root (Home Page)
+    if (currentPath === "") currentPath = "index";
 
     const navLinks = document.querySelectorAll('#desktop-menu-links a');
 
     navLinks.forEach(link => {
-        const linkHref = link.getAttribute('href');
+        const href = link.getAttribute('href');
         
-        // Remove slash if present in href for comparison (e.g. "/pricing.html" -> "pricing.html")
-        const cleanLinkHref = linkHref.replace(/^\//, '');
+        // 2. Clean the link href exactly the same way
+        let cleanHref = href
+            .replace(/^\//, '')
+            .replace(/\/$/, '')
+            .replace(/\.html$/, '');
 
-        if (cleanLinkHref === currentPage || (currentPage === "index.html" && cleanLinkHref === "index.html")) {
+        if (cleanHref === "") cleanHref = "index";
+
+        // 3. Compare the cleaned versions
+        // This ensures "pricing" matches "pricing.html"
+        if (currentPath === cleanHref) {
             link.classList.remove('text-gray-300', 'hover:text-white');
             link.classList.add('text-white', 'text-witchly-primary', 'font-bold');
         }
