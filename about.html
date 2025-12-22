@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | Witchly.host</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6', accent: '#4ade80' } } } } }</script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-witchly-base text-gray-200 font-sans antialiased">
+    <div id="navbar-placeholder"></div>
+
+    <section class="pt-32 pb-16 bg-witchly-surface border-b border-gray-800 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-witchly-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <span class="text-witchly-primary font-bold tracking-widest text-xs uppercase mb-3 block">Behind the Magic</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">We are <span class="text-white">Witchly.</span></h1>
+            <p class="text-xl text-gray-400 leading-relaxed">
+                Founded by gamers, for gamers. We were tired of overpriced hosts with terrible support. 
+                So we built the hosting company we always wanted to use.
+            </p>
+        </div>
+    </section>
+
+    <main class="py-20 max-w-7xl mx-auto px-4">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+            <div class="bg-black/20 p-8 rounded-xl border border-gray-700 hover:border-witchly-primary transition-colors">
+                <i class="fa-solid fa-server text-3xl text-purple-500 mb-4"></i>
+                <h3 class="text-xl font-bold text-white mb-2">Hardware First</h3>
+                <p class="text-sm text-gray-400">We don't oversell. We use dedicated Ryzen 9 and Intel i9 processors to ensure your ticks never drop.</p>
+            </div>
+            <div class="bg-black/20 p-8 rounded-xl border border-gray-700 hover:border-blue-500 transition-colors">
+                <i class="fa-solid fa-headset text-3xl text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-bold text-white mb-2">Human Support</h3>
+                <p class="text-sm text-gray-400">No chatbots. When you open a ticket, you talk to a real admin who actually plays the game.</p>
+            </div>
+            <div class="bg-black/20 p-8 rounded-xl border border-gray-700 hover:border-green-500 transition-colors">
+                <i class="fa-solid fa-bolt text-3xl text-green-500 mb-4"></i>
+                <h3 class="text-xl font-bold text-white mb-2">Instant Setup</h3>
+                <p class="text-sm text-gray-400">Our automation creates your server in seconds after payment, so you can start playing immediately.</p>
+            </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-white text-center mb-12">Meet the <span class="text-witchly-primary">Staff</span></h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+            
+            <div class="bg-witchly-surface rounded-xl overflow-hidden border border-gray-700 group hover:-translate-y-2 transition-transform duration-300">
+                <div class="h-24 bg-gradient-to-r from-purple-800 to-indigo-900"></div>
+                <div class="px-6 pb-6 relative">
+                    <img src="https://cdn.discordapp.com/avatars/844426168793825330/a_0f560ec8b5b784e1740780ebe0a74e88.gif?size=4096" class="w-20 h-20 rounded-full border-4 border-witchly-surface -mt-10 mb-3 shadow-lg">
+                    
+                    <h3 class="text-xl font-bold text-white">Vamp_</h3>
+                    <p class="text-xs text-witchly-primary font-bold uppercase tracking-wider mb-4">Founder & CEO</p>
+                    <p class="text-sm text-gray-400 mb-4">Server architecture expert and full-stack developer.</p>
+                    
+                    <div class="flex gap-3 text-gray-500">
+                        <a href="#" class="hover:text-white"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-witchly-surface rounded-xl overflow-hidden border border-gray-700 group hover:-translate-y-2 transition-transform duration-300">
+                <div class="h-24 bg-gradient-to-r from-blue-800 to-cyan-900"></div>
+                <div class="px-6 pb-6 relative">
+                    <img src="https://cdn.discordapp.com/avatars/400003254433611777/be9fa8c2b08d0976ce00ed19852319f4.png?size=4096" class="w-20 h-20 rounded-full border-4 border-witchly-surface -mt-10 mb-3 shadow-lg">
+                    
+                    <h3 class="text-xl font-bold text-white">Kurama</h3>
+                    <p class="text-xs text-blue-400 font-bold uppercase tracking-wider mb-4">Operations Manager</p>
+                    <p class="text-sm text-gray-400 mb-4">Ensures all nodes are running smoothly. Minecraft technical wizard.</p>
+                    
+                    <div class="flex gap-3 text-gray-500">
+                        <a href="#" class="hover:text-white"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-witchly-surface rounded-xl overflow-hidden border border-gray-700 group hover:-translate-y-2 transition-transform duration-300">
+                <div class="h-24 bg-gradient-to-r from-green-800 to-emerald-900"></div>
+                <div class="px-6 pb-6 relative">
+                    <img src="https://cdn.discordapp.com/icons/875276104796090379/bc988d31b8dce4f88b40aae1aa1e318e.png?size=4096" class="w-20 h-20 rounded-full border-4 border-witchly-surface -mt-10 mb-3 shadow-lg">
+                    
+                    <h3 class="text-xl font-bold text-white">SF-25</h3>
+                    <p class="text-xs text-green-400 font-bold uppercase tracking-wider mb-4">Technical Manager</p>
+                    <p class="text-sm text-gray-400 mb-4">Helps around with the backend and frontend.</p>
+                    
+                    <div class="flex gap-3 text-gray-500">
+                        <a href="#" class="hover:text-white"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-witchly-surface rounded-xl overflow-hidden border border-dashed border-gray-700 group hover:border-gray-500 transition-colors flex flex-col items-center justify-center text-center p-6 min-h-[300px]">
+                <div class="h-16 w-16 bg-gray-800 rounded-full flex items-center justify-center mb-4 text-gray-500">
+                    <i class="fa-solid fa-plus text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white">Join Us?</h3>
+                <p class="text-sm text-gray-400 mb-4">We are always looking for talent.</p>
+                <a href="https://discord.gg/3PCd7UpGE4" class="text-sm font-bold text-witchly-primary hover:text-white transition-colors">Apply Now &rarr;</a>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

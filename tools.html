@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Server Tools | Witchly.host</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6', accent: '#4ade80' } } } } }</script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-witchly-base text-gray-200 font-sans antialiased">
+    <div id="navbar-placeholder"></div>
+
+    <section class="pt-32 pb-10 bg-witchly-surface border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold text-white mb-4">Witchly <span class="text-witchly-primary">Toolkit</span></h1>
+            <p class="text-gray-400">Free utilities for server owners.</p>
+        </div>
+    </section>
+
+    <main class="py-12 max-w-7xl mx-auto px-4">
+        
+        <div class="flex justify-center mb-12">
+            <div class="bg-gray-900 p-1 rounded-lg flex gap-2">
+                <button onclick="switchTool('ram')" id="btn-ram" class="px-6 py-2 rounded text-sm font-bold bg-witchly-primary text-white shadow-lg transition-all">RAM Calculator</button>
+                <button onclick="switchTool('checker')" id="btn-checker" class="px-6 py-2 rounded text-sm font-bold text-gray-400 hover:text-white transition-all">Status Checker</button>
+                <button onclick="switchTool('config')" id="btn-config" class="px-6 py-2 rounded text-sm font-bold text-gray-400 hover:text-white transition-all">Config Gen</button>
+            </div>
+        </div>
+
+        <div id="tool-ram" class="max-w-2xl mx-auto animate-fade-in-up">
+            <div class="bg-witchly-surface border border-gray-700 rounded-xl p-8 shadow-xl">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="h-12 w-12 bg-purple-900/30 rounded flex items-center justify-center text-purple-400"><i class="fa-solid fa-calculator text-2xl"></i></div>
+                    <h2 class="text-2xl font-bold text-white">How much RAM do I need?</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">Game Type</label>
+                        <select id="ram-game" class="w-full bg-black border border-gray-700 rounded p-3 text-white focus:border-purple-500 outline-none">
+                            <option value="vanilla">Minecraft Vanilla / Paper</option>
+                            <option value="light-mod">Minecraft Light Modpack (50+ Mods)</option>
+                            <option value="heavy-mod">Minecraft Heavy Modpack (200+ Mods)</option>
+                            <option value="rust">Rust</option>
+                            <option value="palworld">Palworld</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">Estimated Player Count</label>
+                        <input type="range" id="ram-players" min="1" max="50" value="5" class="w-full accent-purple-500 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
+                        <div class="text-right text-purple-400 font-mono font-bold mt-1"><span id="player-val">5</span> Players</div>
+                    </div>
+
+                    <div class="bg-black/50 p-6 rounded-lg border border-gray-700 text-center mt-6">
+                        <p class="text-gray-500 text-xs uppercase tracking-widest mb-2">RECOMMENDED PLAN</p>
+                        <div id="ram-result" class="text-4xl font-bold text-white mb-2">4 GB</div>
+                        <div id="ram-subtext" class="text-sm text-gray-400">Great for small SMPs.</div>
+                    </div>
+                    
+                    <a href="/pricing" class="block w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg text-center transition-all">VIEW PRICING</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="tool-checker" class="hidden max-w-2xl mx-auto animate-fade-in-up">
+            <div class="bg-witchly-surface border border-gray-700 rounded-xl p-8 shadow-xl">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="h-12 w-12 bg-green-900/30 rounded flex items-center justify-center text-green-400"><i class="fa-solid fa-signal text-2xl"></i></div>
+                    <h2 class="text-2xl font-bold text-white">Is my server online?</h2>
+                </div>
+
+                <div class="flex gap-4 mb-6">
+                    <input type="text" id="server-ip" placeholder="play.myserver.com" class="flex-grow bg-black border border-gray-700 rounded p-3 text-white focus:border-green-500 outline-none">
+                    <button onclick="checkServer()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 rounded transition-all">CHECK</button>
+                </div>
+
+                <div id="status-result" class="hidden">
+                    <div class="bg-black/50 p-6 rounded-lg border border-gray-700">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-gray-400 text-sm">Status</span>
+                            <span id="status-badge" class="bg-green-500/20 text-green-400 text-xs font-bold px-2 py-1 rounded uppercase">Online</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-gray-400 text-sm">MOTD</span>
+                            <span id="status-motd" class="text-white font-mono text-sm text-right">A Minecraft Server</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 text-sm">Players</span>
+                            <span id="status-players" class="text-white font-bold">0 / 20</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tool-config" class="hidden max-w-4xl mx-auto animate-fade-in-up">
+            <div class="bg-witchly-surface border border-gray-700 rounded-xl p-8 shadow-xl grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="space-y-4">
+                    <h3 class="font-bold text-white border-b border-gray-700 pb-2">Settings</h3>
+                    
+                    <div>
+                        <label class="text-xs text-gray-500 block mb-1">MOTD (Description)</label>
+                        <input type="text" id="cfg-motd" value="A Witchly Server" class="w-full bg-black border border-gray-700 rounded p-2 text-white text-sm">
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="text-xs text-gray-500 block mb-1">Max Players</label>
+                            <input type="number" id="cfg-players" value="20" class="w-full bg-black border border-gray-700 rounded p-2 text-white text-sm">
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-500 block mb-1">View Distance</label>
+                            <input type="number" id="cfg-view" value="10" class="w-full bg-black border border-gray-700 rounded p-2 text-white text-sm">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between bg-black/30 p-3 rounded border border-gray-700">
+                        <span class="text-sm text-gray-300">PVP Enabled</span>
+                        <input type="checkbox" id="cfg-pvp" checked class="accent-purple-500 h-4 w-4">
+                    </div>
+                    <div class="flex items-center justify-between bg-black/30 p-3 rounded border border-gray-700">
+                        <span class="text-sm text-gray-300">Allow Flight</span>
+                        <input type="checkbox" id="cfg-fly" class="accent-purple-500 h-4 w-4">
+                    </div>
+                    <div class="flex items-center justify-between bg-black/30 p-3 rounded border border-gray-700">
+                        <span class="text-sm text-gray-300">White List</span>
+                        <input type="checkbox" id="cfg-white" class="accent-purple-500 h-4 w-4">
+                    </div>
+
+                    <button onclick="generateConfig()" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded text-sm mt-4">GENERATE</button>
+                </div>
+
+                <div class="relative">
+                    <h3 class="font-bold text-white border-b border-gray-700 pb-2 mb-4">server.properties</h3>
+                    <textarea id="cfg-output" readonly class="w-full h-[300px] bg-black text-green-400 font-mono text-xs p-4 rounded border border-gray-700 outline-none resize-none"></textarea>
+                    <button onclick="copyConfig()" class="absolute top-10 right-2 bg-gray-800 hover:bg-white hover:text-black text-white px-3 py-1 rounded text-xs">Copy</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/main.js"></script>
+    
+    <script>
+        // --- TAB SWITCHING ---
+        function switchTool(toolId) {
+            ['ram', 'checker', 'config'].forEach(t => {
+                document.getElementById(`tool-${t}`).classList.add('hidden');
+                document.getElementById(`btn-${t}`).classList.remove('bg-witchly-primary', 'text-white', 'shadow-lg');
+                document.getElementById(`btn-${t}`).classList.add('text-gray-400', 'hover:text-white');
+            });
+
+            document.getElementById(`tool-${toolId}`).classList.remove('hidden');
+            const btn = document.getElementById(`btn-${toolId}`);
+            btn.classList.remove('text-gray-400', 'hover:text-white');
+            btn.classList.add('bg-witchly-primary', 'text-white', 'shadow-lg');
+        }
+
+        // --- 1. RAM CALC LOGIC ---
+        const ramInput = document.getElementById('ram-players');
+        const gameInput = document.getElementById('ram-game');
+        
+        function updateRam() {
+            const players = parseInt(ramInput.value);
+            const game = gameInput.value;
+            let ram = 4;
+            let text = "Starter Plan";
+
+            document.getElementById('player-val').innerText = players;
+
+            if (game === 'rust' || game === 'palworld') {
+                if(players < 10) { ram = 10; text = "Minimum Requirement"; }
+                else { ram = 16; text = "Smoother Gameplay"; }
+            } else if (game === 'heavy-mod') {
+                if(players < 5) { ram = 8; text = "Heavy Packs Need RAM"; }
+                else if(players < 10) { ram = 12; text = "Mid-Size Community"; }
+                else { ram = 16; text = "Lag-Free Experience"; }
+            } else if (game === 'light-mod') {
+                if(players < 10) { ram = 6; text = "Standard Modded"; }
+                else { ram = 10; text = "Large Group"; }
+            } else {
+                // Vanilla
+                if(players < 5) { ram = 4; text = "Friends SMP"; }
+                else if(players < 20) { ram = 8; text = "Community Server"; }
+                else { ram = 12; text = "Large Network"; }
+            }
+
+            document.getElementById('ram-result').innerText = ram + " GB";
+            document.getElementById('ram-subtext').innerText = text;
+        }
+        
+        ramInput.addEventListener('input', updateRam);
+        gameInput.addEventListener('change', updateRam);
+
+        // --- 2. STATUS CHECKER LOGIC ---
+        async function checkServer() {
+            const ip = document.getElementById('server-ip').value;
+            if(!ip) return alert("Enter an IP");
+
+            const resDiv = document.getElementById('status-result');
+            resDiv.classList.remove('hidden');
+            
+            // Temporary Loading State
+            document.getElementById('status-motd').innerText = "Pinging...";
+
+            try {
+                const req = await fetch(`https://api.mcsrvstat.us/3/${ip}`);
+                const data = await req.json();
+
+                if(data.online) {
+                    document.getElementById('status-badge').className = "bg-green-500/20 text-green-400 text-xs font-bold px-2 py-1 rounded uppercase";
+                    document.getElementById('status-badge').innerText = "ONLINE";
+                    document.getElementById('status-motd').innerText = data.motd.clean[0] || "No MOTD";
+                    document.getElementById('status-players').innerText = `${data.players.online} / ${data.players.max}`;
+                } else {
+                    document.getElementById('status-badge').className = "bg-red-500/20 text-red-400 text-xs font-bold px-2 py-1 rounded uppercase";
+                    document.getElementById('status-badge').innerText = "OFFLINE";
+                    document.getElementById('status-motd').innerText = "Server is unreachable";
+                    document.getElementById('status-players').innerText = "- / -";
+                }
+            } catch(e) {
+                alert("API Error");
+            }
+        }
+
+        // --- 3. CONFIG GEN LOGIC ---
+        function generateConfig() {
+            const motd = document.getElementById('cfg-motd').value;
+            const max = document.getElementById('cfg-players').value;
+            const view = document.getElementById('cfg-view').value;
+            const pvp = document.getElementById('cfg-pvp').checked;
+            const fly = document.getElementById('cfg-fly').checked;
+            const white = document.getElementById('cfg-white').checked;
+
+            const txt = `#Minecraft Server Properties
+#Generated by Witchly Tools
+motd=${motd}
+max-players=${max}
+view-distance=${view}
+pvp=${pvp}
+allow-flight=${fly}
+white-list=${white}
+server-port=25565
+online-mode=true
+difficulty=normal
+spawn-protection=16`;
+
+            document.getElementById('cfg-output').value = txt;
+        }
+
+        function copyConfig() {
+            navigator.clipboard.writeText(document.getElementById('cfg-output').value);
+            alert("Copied!");
+        }
+    </script>
+</body>
+</html>

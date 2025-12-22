@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System Status | Witchly.host</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6', accent: '#4ade80' } } } } }</script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-witchly-base text-gray-200 font-sans antialiased">
+    <div id="navbar-placeholder"></div>
+    <main class="pt-32 pb-20 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-10"><h1 class="text-4xl font-bold text-white mb-2">System Status</h1><p class="text-gray-400">Real-time uptime monitoring.</p></div>
+        <div class="w-full h-[800px] bg-witchly-surface rounded-lg border border-gray-700 overflow-hidden relative">
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none"><div class="text-center p-6 bg-black/80 rounded border border-witchly-primary"><p class="text-witchly-primary font-mono font-bold">Waiting for Embed Code...</p></div></div>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<nav class="bg-witchly-base/90 backdrop-blur-md border-b border-gray-800 fixed w-full z-50 transition-all duration-300" id="main-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20 transition-all duration-300" id="nav-container">
+            
+            <div class="flex-shrink-0 flex items-center gap-3">
+                <a href="/" class="flex items-center gap-2 group">
+                    <img class="h-10 w-auto transition-transform duration-300 group-hover:rotate-12" src="/images/logo.png" alt="Witchly" id="nav-logo">
+                    <span class="text-white font-bold text-xl tracking-tight">Witchly<span class="text-witchly-primary">.host</span></span>
+                </a>
+            </div>
+            
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-8 font-sans text-sm font-bold tracking-wide" id="desktop-menu-links">
+                    <a href="/" class="text-gray-300 hover:text-white transition-colors hover:scale-105 transform inline-block">HOME</a>
+                    <a href="/pricing.html" class="text-gray-300 hover:text-white transition-colors hover:scale-105 transform inline-block">PRICING</a>
+                    <a href="/library.html" class="text-gray-300 hover:text-white transition-colors hover:scale-105 transform inline-block">LIBRARY</a>
+                    <a href="/hardware.html" class="text-gray-300 hover:text-white transition-colors hover:scale-105 transform inline-block">HARDWARE</a>
+                    <a href="/tools.html" class="text-gray-300 hover:text-white transition-colors hover:scale-105 transform inline-block">TOOLS</a>
+                    <a href="/uptime.html" class="text-gray-300 hover:text-white transition-colors hover:scale-105 transform inline-block">STATUS</a>
+                    <a href="/network.html" class="text-gray-300 hover:text-white transition-colors hover:scale-105 transform inline-block">NETWORK</a>
+                    <a href="/about.html" class="text-gray-300 hover:text-white transition-colors hover:scale-105 transform inline-block">ABOUT</a>
+                    <a href="/help" class="text-gray-300 hover:text-white transition-colors hover:scale-105 transform inline-block">HELP</a>
+                </div>
+            </div>
+
+            <div class="hidden md:block">
+                <a href="https://panel.witchly.host" class="bg-witchly-primary hover:bg-witchly-primaryHover text-white px-5 py-2 rounded-lg font-bold transition-all shadow-lg hover:shadow-purple-500/20 text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-right-to-bracket"></i> PANEL
+                </a>
+            </div>
+
+            <div class="-mr-2 flex md:hidden">
+                <button type="button" id="mobile-menu-btn" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="md:hidden hidden bg-witchly-surface border-b border-gray-700" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-sans font-bold tracking-wide">
+            <a href="/" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base">HOME</a>
+            <a href="/pricing.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base">PRICING</a>
+            <a href="/library.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base">LIBRARY</a>
+            <a href="/hardware.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base">HARDWARE</a>
+            <a href="/tools.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base">TOOLS</a>
+            <a href="/uptime.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base">STATUS</a>
+            <a href="/network.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base">NETWORK</a>
+            <a href="/about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base">ABOUT</a>
+            <a href="/help" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base">HELP</a>
+            <a href="https://panel.witchly.host" class="bg-witchly-primary text-white block px-3 py-2 rounded-md text-base mt-4 text-center shadow-lg">LOGIN TO PANEL</a>
+        </div>
+    </div>
+</nav>

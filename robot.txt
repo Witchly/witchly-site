@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /components/
+Disallow: /css/
+Disallow: /js/
+
+Sitemap: https://witchly.host/sitemap.xml

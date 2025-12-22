@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Witchly Generator | Internal Tool</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="../js/faq_db.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'JetBrains Mono', monospace; background-color: #0f172a; color: #fff; }
+        .code-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+        .code-scroll::-webkit-scrollbar-track { background: #1e293b; }
+        .code-scroll::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 4px; }
+    </style>
+</head>
+<body class="min-h-screen p-8 bg-gray-950">
+
+    <div class="max-w-6xl mx-auto">
+        <div class="flex items-center justify-between mb-8 border-b border-gray-800 pb-4">
+            <div class="flex items-center gap-3">
+                <img src="../images/logo.png" class="h-8 w-auto">
+                <h1 class="text-2xl font-bold text-white tracking-tight">Database<span class="text-purple-500">Generator</span></h1>
+            </div>
+            
+            <div class="flex gap-2 bg-gray-900 p-1 rounded-lg">
+                <button onclick="switchTab('add')" id="tab-add" class="px-4 py-2 rounded text-sm font-bold bg-gray-800 text-white shadow">Create New</button>
+                <button onclick="switchTab('manage')" id="tab-manage" class="px-4 py-2 rounded text-sm font-bold text-gray-400 hover:text-white transition-colors">Edit Existing</button>
+            </div>
+        </div>
+
+        <div id="view-add" class="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-fade-in-up">
+            <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 shadow-xl">
+                <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-6 border-l-2 border-green-500 pl-3">Add FAQ Entry</h3>
+                
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-gray-500 text-xs mb-1">CATEGORY</label>
+                        <select id="game-select" class="w-full bg-black border border-gray-700 rounded p-2.5 text-sm focus:border-green-500 outline-none">
+                            <option value="getting-started">Getting Started</option>
+                            <option value="minecraft">Minecraft</option>
+                            <option value="rust">Rust</option>
+                            <option value="palworld">Palworld</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-500 text-xs mb-1">UNIQUE ID</label>
+                        <input type="text" id="id-input" placeholder="e.g. lag-fix" class="w-full bg-black border border-gray-700 rounded p-2.5 text-sm focus:border-green-500 outline-none">
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-500 text-xs mb-1">TITLE</label>
+                    <input type="text" id="title-input" class="w-full bg-black border border-gray-700 rounded p-2.5 text-sm focus:border-green-500 outline-none">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-500 text-xs mb-1">ANSWER (HTML ALLOWED)</label>
+                    <textarea id="answer-input" rows="5" class="w-full bg-black border border-gray-700 rounded p-2.5 text-sm font-mono focus:border-green-500 outline-none text-gray-300"></textarea>
+                    <p class="text-[10px] text-gray-600 mt-1">Shortcuts: &lt;b&gt;Bold&lt;/b&gt;, &lt;code&gt;Code&lt;/code&gt;, &lt;br&gt;Break</p>
+                </div>
+
+                <button onclick="addEntryToMemory()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-all shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-code"></i> GENERATE CODE
+                </button>
+            </div>
+
+            <div class="bg-black p-6 rounded-xl border border-gray-800 relative shadow-xl flex flex-col">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider border-l-2 border-purple-500 pl-3">Your New Database Code</h3>
+                    <span class="text-[10px] bg-gray-900 text-gray-500 px-2 py-1 rounded border border-gray-800">js/faq_db.js</span>
+                </div>
+                
+                <textarea id="full-code-output" readonly class="w-full flex-grow bg-gray-900/50 text-green-400 text-xs font-mono p-4 rounded border border-gray-800 outline-none resize-none code-scroll"></textarea>
+                
+                <button onclick="copyFullCode()" class="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg text-xs font-bold transition-colors shadow-lg">
+                    <i class="fa-regular fa-copy mr-2"></i> COPY ALL & PASTE INTO FILE
+                </button>
+            </div>
+        </div>
+
+        <div id="view-manage" class="hidden animate-fade-in-up">
+            <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+                <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-6 border-l-2 border-red-500 pl-3">Edit Current Questions</h3>
+                
+                <div class="overflow-hidden rounded-lg border border-gray-800">
+                    <table class="w-full text-left text-sm text-gray-400">
+                        <thead class="text-xs uppercase bg-black text-gray-500">
+                            <tr>
+                                <th class="px-6 py-3 font-bold">Category</th>
+                                <th class="px-6 py-3 font-bold">ID</th>
+                                <th class="px-6 py-3 font-bold">Title</th>
+                                <th class="px-6 py-3 text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="manage-table-body" class="divide-y divide-gray-800 bg-gray-900/50">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let localDB = [];
+
+        // 1. Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            if (typeof window.faqDatabase !== 'undefined') {
+                localDB = JSON.parse(JSON.stringify(window.faqDatabase));
+                renderTable();
+                updateOutputBox();
+            } else {
+                console.warn("Database not loaded. Using empty slate.");
+            }
+        });
+
+        // 2. Tab Logic
+        function switchTab(tab) {
+            const btnAdd = document.getElementById('tab-add');
+            const btnManage = document.getElementById('tab-manage');
+            const viewAdd = document.getElementById('view-add');
+            const viewManage = document.getElementById('view-manage');
+
+            if(tab === 'add') {
+                viewAdd.classList.remove('hidden');
+                viewManage.classList.add('hidden');
+                btnAdd.className = "px-4 py-2 rounded text-sm font-bold bg-gray-800 text-white shadow";
+                btnManage.className = "px-4 py-2 rounded text-sm font-bold text-gray-400 hover:text-white transition-colors";
+            } else {
+                viewAdd.classList.add('hidden');
+                viewManage.classList.remove('hidden');
+                btnManage.className = "px-4 py-2 rounded text-sm font-bold bg-gray-800 text-white shadow";
+                btnAdd.className = "px-4 py-2 rounded text-sm font-bold text-gray-400 hover:text-white transition-colors";
+            }
+        }
+
+        // 3. Add Logic
+        function addEntryToMemory() {
+            const game = document.getElementById('game-select').value;
+            const id = document.getElementById('id-input').value || Math.random().toString(36).substr(2, 5);
+            const title = document.getElementById('title-input').value;
+            const answer = document.getElementById('answer-input').value;
+
+            if(!title || !answer) { alert("Please fill in Title and Answer"); return; }
+
+            localDB.push({ id, game, title, answer });
+            
+            // Clear inputs
+            document.getElementById('id-input').value = "";
+            document.getElementById('title-input').value = "";
+            document.getElementById('answer-input').value = "";
+
+            renderTable();
+            updateOutputBox();
+            alert("Entry Added! Code updated on the right.");
+        }
+
+        // 4. Delete Logic
+        function deleteEntry(index) {
+            if(confirm("Remove this entry?")) {
+                localDB.splice(index, 1);
+                renderTable();
+                updateOutputBox();
+            }
+        }
+
+        // 5. Render Table
+        function renderTable() {
+            const tbody = document.getElementById('manage-table-body');
+            if(localDB.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" class="px-6 py-4 text-center text-gray-600">Database Empty</td></tr>';
+                return;
+            }
+            tbody.innerHTML = localDB.map((item, index) => `
+                <tr class="hover:bg-gray-800 transition-colors">
+                    <td class="px-6 py-3 font-mono text-xs text-purple-400 uppercase">${item.game}</td>
+                    <td class="px-6 py-3 font-mono text-xs text-gray-500">${item.id}</td>
+                    <td class="px-6 py-3 text-white">${item.title}</td>
+                    <td class="px-6 py-3 text-right">
+                        <button onclick="deleteEntry(${index})" class="text-gray-500 hover:text-red-500 transition-colors px-2 py-1">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // 6. Generate Code
+        function updateOutputBox() {
+            const jsonString = JSON.stringify(localDB, null, 4);
+            const fileContent = `// Central Knowledgebase Database\n// Generated via Witchly Tool\n\nconst faqDatabase = ${jsonString};\n\nwindow.faqDatabase = faqDatabase;`;
+            document.getElementById('full-code-output').value = fileContent;
+        }
+
+        // 7. Copy
+        function copyFullCode() {
+            const code = document.getElementById('full-code-output').value;
+            navigator.clipboard.writeText(code);
+            alert("COPIED! \n\nNow open 'js/faq_db.js' and paste this over the old code.");
+        }
+    </script>
+</body>
+</html>

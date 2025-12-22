@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modpack Library | Witchly.host</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6', accent: '#4ade80' } } } } }</script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-witchly-base text-gray-200 font-sans antialiased">
+    <div id="navbar-placeholder"></div>
+
+    <section class="pt-32 pb-10 bg-witchly-surface border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold text-white mb-4">One-Click <span class="text-witchly-primary">Installs</span></h1>
+            <p class="text-gray-400">All these modpacks and games are available in our panel.</p>
+        </div>
+    </section>
+
+    <main class="py-12 max-w-7xl mx-auto px-4">
+        
+        <div class="flex flex-wrap justify-center gap-2 mb-12">
+            <button onclick="filterLib('all')" class="filter-btn active px-4 py-2 rounded-full text-xs font-bold bg-witchly-primary text-white border border-transparent">All Games</button>
+            <button onclick="filterLib('minecraft')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold bg-gray-800 text-gray-400 border border-gray-700 hover:text-white">Minecraft</button>
+            <button onclick="filterLib('survival')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold bg-gray-800 text-gray-400 border border-gray-700 hover:text-white">Survival</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="library-grid">
+            
+            <div class="lib-card group bg-witchly-surface border border-gray-700 rounded-xl overflow-hidden hover:border-gray-500 transition-all" data-cat="minecraft">
+                <div class="h-32 bg-gray-800 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-witchly-surface to-transparent z-10"></div>
+                    <i class="fa-solid fa-dragon absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl text-gray-700 group-hover:text-witchly-primary transition-colors"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold text-white mb-1">RLCraft</h3>
+                    <p class="text-xs text-gray-400 mb-4 h-8">Real Life / Hardcore Survival. Extremely heavy modpack.</p>
+                    <div class="flex justify-between items-center bg-black/30 p-2 rounded mb-4">
+                        <span class="text-[10px] text-gray-500 uppercase font-bold">Requirement</span>
+                        <span class="text-xs text-yellow-400 font-bold"><i class="fa-solid fa-memory mr-1"></i> 8GB+</span>
+                    </div>
+                    <a href="/pricing.html?game=minecraft&rec=8" class="block w-full text-center bg-gray-800 hover:bg-witchly-primary text-white py-2 rounded text-xs font-bold transition-colors">Deploy Server</a>
+                </div>
+            </div>
+
+            <div class="lib-card group bg-witchly-surface border border-gray-700 rounded-xl overflow-hidden hover:border-gray-500 transition-all" data-cat="minecraft">
+                <div class="h-32 bg-gray-800 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-witchly-surface to-transparent z-10"></div>
+                    <i class="fa-solid fa-cubes-stacked absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl text-gray-700 group-hover:text-blue-500 transition-colors"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold text-white mb-1">All The Mods 9</h3>
+                    <p class="text-xs text-gray-400 mb-4 h-8">The ultimate kitchen-sink modpack with over 400 mods.</p>
+                    <div class="flex justify-between items-center bg-black/30 p-2 rounded mb-4">
+                        <span class="text-[10px] text-gray-500 uppercase font-bold">Requirement</span>
+                        <span class="text-xs text-red-400 font-bold"><i class="fa-solid fa-memory mr-1"></i> 10GB+</span>
+                    </div>
+                    <a href="/pricing.html?game=minecraft&rec=16" class="block w-full text-center bg-gray-800 hover:bg-witchly-primary text-white py-2 rounded text-xs font-bold transition-colors">Deploy Server</a>
+                </div>
+            </div>
+
+            <div class="lib-card group bg-witchly-surface border border-gray-700 rounded-xl overflow-hidden hover:border-gray-500 transition-all" data-cat="minecraft">
+                <div class="h-32 bg-gray-800 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-witchly-surface to-transparent z-10"></div>
+                    <i class="fa-solid fa-leaf absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl text-gray-700 group-hover:text-green-500 transition-colors"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold text-white mb-1">Better MC</h3>
+                    <p class="text-xs text-gray-400 mb-4 h-8">What Minecraft 2.0 should have been. Vanilla+ Experience.</p>
+                    <div class="flex justify-between items-center bg-black/30 p-2 rounded mb-4">
+                        <span class="text-[10px] text-gray-500 uppercase font-bold">Requirement</span>
+                        <span class="text-xs text-green-400 font-bold"><i class="fa-solid fa-memory mr-1"></i> 6GB+</span>
+                    </div>
+                    <a href="/pricing.html?game=minecraft&rec=8" class="block w-full text-center bg-gray-800 hover:bg-witchly-primary text-white py-2 rounded text-xs font-bold transition-colors">Deploy Server</a>
+                </div>
+            </div>
+
+            <div class="lib-card group bg-witchly-surface border border-gray-700 rounded-xl overflow-hidden hover:border-gray-500 transition-all" data-cat="survival">
+                <div class="h-32 bg-gray-800 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-witchly-surface to-transparent z-10"></div>
+                    <i class="fa-solid fa-radiation absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl text-gray-700 group-hover:text-orange-500 transition-colors"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold text-white mb-1">Rust Protocol</h3>
+                    <p class="text-xs text-gray-400 mb-4 h-8">Standard Rust server. Supports Oxide/UMod plugins.</p>
+                    <div class="flex justify-between items-center bg-black/30 p-2 rounded mb-4">
+                        <span class="text-[10px] text-gray-500 uppercase font-bold">Requirement</span>
+                        <span class="text-xs text-orange-400 font-bold"><i class="fa-solid fa-memory mr-1"></i> 10GB+</span>
+                    </div>
+                    <a href="/pricing.html?game=rust&rec=10" class="block w-full text-center bg-gray-800 hover:bg-witchly-primary text-white py-2 rounded text-xs font-bold transition-colors">Deploy Server</a>
+                </div>
+            </div>
+
+             <div class="lib-card group bg-witchly-surface border border-gray-700 rounded-xl overflow-hidden hover:border-gray-500 transition-all" data-cat="survival">
+                <div class="h-32 bg-gray-800 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-witchly-surface to-transparent z-10"></div>
+                    <i class="fa-solid fa-gamepad absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl text-gray-700 group-hover:text-blue-500 transition-colors"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold text-white mb-1">Palworld</h3>
+                    <p class="text-xs text-gray-400 mb-4 h-8">The hit monster-catching survival game.</p>
+                    <div class="flex justify-between items-center bg-black/30 p-2 rounded mb-4">
+                        <span class="text-[10px] text-gray-500 uppercase font-bold">Requirement</span>
+                        <span class="text-xs text-blue-400 font-bold"><i class="fa-solid fa-memory mr-1"></i> 12GB+</span>
+                    </div>
+                    <a href="/pricing.html?game=palworld&rec=10" class="block w-full text-center bg-gray-800 hover:bg-witchly-primary text-white py-2 rounded text-xs font-bold transition-colors">Deploy Server</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/main.js"></script>
+    
+    <script>
+        function filterLib(cat) {
+            const cards = document.querySelectorAll('.lib-card');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            // Update Buttons
+            btns.forEach(b => {
+                b.classList.remove('bg-witchly-primary', 'text-white');
+                b.classList.add('bg-gray-800', 'text-gray-400');
+                if(b.innerText.toLowerCase().includes(cat === 'all' ? 'all' : cat)) {
+                    b.classList.add('bg-witchly-primary', 'text-white');
+                    b.classList.remove('bg-gray-800', 'text-gray-400');
+                }
+            });
+
+            // Filter Cards
+            cards.forEach(card => {
+                if(cat === 'all' || card.dataset.cat === cat) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

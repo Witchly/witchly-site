@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hardware & Specs | Witchly.host</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6', accent: '#4ade80' } } } } }</script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-witchly-base text-gray-200 font-sans antialiased">
+    <div id="navbar-placeholder"></div>
+
+    <section class="pt-32 pb-16 bg-witchly-surface border-b border-gray-800 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-purple-900/10 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Powered by <span class="text-witchly-primary">Intel i9</span></h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">We use the legendary i9-9900K overclocked to 5.0GHz. Pure raw speed for high-performance gaming.</p>
+        </div>
+    </section>
+
+    <main class="py-20 max-w-7xl mx-auto px-4">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+            <div class="bg-witchly-surface p-8 rounded-xl border border-gray-700 hover:border-blue-500 transition-colors group">
+                <div class="h-16 w-16 bg-blue-900/20 rounded-lg flex items-center justify-center text-blue-500 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-microchip text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Intel i9-9900K</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Clocked at <strong>5.0GHz</strong>. Minecraft relies entirely on single-core speed, and the 9900K delivers the raw frequency needed to keep your TPS at 20.
+                </p>
+            </div>
+
+            <div class="bg-witchly-surface p-8 rounded-xl border border-gray-700 hover:border-purple-500 transition-colors group">
+                <div class="h-16 w-16 bg-purple-900/20 rounded-lg flex items-center justify-center text-purple-500 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-memory text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">128GB DDR4 RAM</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Massive capacity to handle huge networks. Whether you run a BungeeCord network or a heavy modpack, we have the overhead to handle it.
+                </p>
+            </div>
+
+            <div class="bg-witchly-surface p-8 rounded-xl border border-gray-700 hover:border-green-500 transition-colors group">
+                <div class="h-16 w-16 bg-green-900/20 rounded-lg flex items-center justify-center text-green-500 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-hard-drive text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">2TB NVMe RAID</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Configured in RAID for maximum data safety and read speeds. Your chunks load instantly, and your data is protected against drive failure.
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>
