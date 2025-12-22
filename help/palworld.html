@@ -6,10 +6,20 @@
     <link rel="icon" type="image/png" href="../images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6', accent: '#4ade80' } } } } }</script>
+    <script>
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, 
+                    colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6', accent: '#4ade80' } }
+                } 
+            } 
+        }
+    </script>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg-witchly-base text-gray-200 font-sans antialiased">
+    
     <div id="navbar-placeholder"></div>
 
     <section class="pt-32 pb-10 bg-witchly-surface border-b border-gray-800">
@@ -33,6 +43,7 @@
 
     <script src="../js/faq_db.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/kb-actions.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -49,19 +60,19 @@
                 const questions = window.faqDatabase.filter(q => q.game === gameType);
 
                 if(questions.length === 0) {
-                    container.innerHTML = '<div class="col-span-full text-gray-500 text-center">No protocols found.</div>';
+                    container.innerHTML = '<div class="col-span-full text-gray-500 text-center">No protocols found for Palworld.</div>';
                     return;
                 }
 
                 container.innerHTML = questions.map((q, index) => `
-                    <div id="${q.id}" class="bg-witchly-surface border border-gray-700 rounded-xl p-6 flex flex-col hover:border-blue-500/50 transition-all shadow-lg group">
+                    <div id="${q.id}" class="bg-witchly-surface border border-gray-700 rounded-xl p-6 flex flex-col hover:border-blue-500/50 transition-all shadow-lg group scroll-mt-32">
                         
                         <div class="mb-4">
                             <span class="${accentColor} font-mono text-xs uppercase tracking-wider mb-2 block">Protocol ${(index + 1).toString().padStart(2, '0')}</span>
                             <h3 class="text-xl font-bold text-white leading-tight group-hover:text-witchly-primary transition-colors">${q.title}</h3>
                         </div>
 
-                        <div class="answer-content text-gray-400 text-sm leading-relaxed mb-4 line-clamp-4 flex-grow">
+                        <div class="answer-content text-gray-400 text-sm leading-relaxed mb-4 line-clamp-4 flex-grow transition-all duration-300">
                             ${q.answer}
                         </div>
 
@@ -74,6 +85,7 @@
                 `).join('');
 
                 if(window.handleHashAnchor) window.handleHashAnchor();
+
             }, 100);
         });
     </script>

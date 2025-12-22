@@ -6,21 +6,35 @@
     <link rel="icon" type="image/png" href="../images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6', accent: '#4ade80' } } } } }</script>
+    <script>
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, 
+                    colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6', accent: '#4ade80' } }
+                } 
+            } 
+        }
+    </script>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg-witchly-base text-gray-200 font-sans antialiased">
+    
     <div id="navbar-placeholder"></div>
+
     <section class="relative pt-32 pb-16 bg-gradient-to-b from-witchly-base to-witchly-surface border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">System <span class="text-witchly-primary">Knowledgebase</span></h1>
+            
             <div class="relative max-w-2xl mx-auto group">
                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"><i class="fa-solid fa-magnifying-glass text-gray-500"></i></div>
                 <input type="text" id="kb-search-input" class="block w-full pl-12 pr-4 py-4 bg-gray-900 border border-gray-700 rounded-lg text-white font-mono text-sm focus:ring-2 focus:ring-witchly-primary outline-none transition-all shadow-lg" placeholder="Search protocol (e.g. 'How to OP' or 'Wipe')...">
                 <div id="kb-search-results" class="hidden absolute w-full bg-gray-800 border border-gray-700 rounded-lg mt-2 shadow-2xl z-50 overflow-hidden text-left"></div>
             </div>
+
         </div>
     </section>
+
     <main class="py-16 max-w-7xl mx-auto px-4">
         <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2"><i class="fa-solid fa-database text-witchly-primary"></i> Select Database</h2>
         
@@ -67,7 +81,13 @@
             </a>
         </div>
     </main>
+
     <div id="footer-placeholder"></div>
+    
+    <script src="../js/faq_db.js"></script>
+    
     <script src="../js/main.js"></script>
+    
+    <script src="../js/kb-search.js"></script>
 </body>
 </html>
