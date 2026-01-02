@@ -3,32 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium Game Hosting for Minecraft, Rust, and Palworld. Powered by i9 processors, NVMe SSDs, and 24/7 Support.">
+    <meta name="description" content="Community Guidelines for Witchly.host. Rules for Discord and support interaction.">
     <meta name="theme-color" content="#6d28d9">
+    
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Witchly.host | High Performance Game Hosting">
-    <meta property="og:description" content="Deploy your game server in seconds. 99.9% Uptime, DDoS Protection, and Instant Setup.">
+    <meta property="og:title" content="Community Guidelines | Witchly.host">
+    <meta property="og:description" content="Our rules for a safe and magical community.">
     <meta property="og:image" content="https://witchly.host/images/logo.png">
-    <meta property="og:url" content="https://witchly.host/">
-    <meta property="twitter:card" content="summary">
-    <meta property="twitter:title" content="Witchly.host | Game Hosting">
-    <meta property="twitter:description" content="Deploy your game server in seconds. Powered by i9 processors.">
-    <meta property="twitter:image" content="https://witchly.host/images/logo.png">
+    
     <title>Community Guidelines | Witchly.host</title>
     <link rel="icon" type="image/png" href="../images/logo.png">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6' } } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        witchly: {
+                            base: '#0f172a',    // Slate 900
+                            surface: '#1e293b', // Slate 800
+                            card: '#334155',    // Slate 700
+                            primary: '#7c3aed', // Violet 600
+                            primaryHover: '#6d28d9' // Violet 700
+                        }
+                    }
+                }
+            }
+        }
     </script>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
-<body class="bg-witchly-base text-gray-200 font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-witchly-base text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-witchly-primary selection:text-white">
+
     <div id="navbar-placeholder"></div>
 
-    <div class="mt-20 bg-gray-900 border-b border-gray-800 relative z-30">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="flex items-center gap-8 overflow-x-auto no-scrollbar text-sm font-bold tracking-wide pt-4">
+    <div class="mt-20 bg-witchly-base/80 backdrop-blur-md border-b border-gray-800 sticky top-0 z-40">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex items-center gap-8 overflow-x-auto no-scrollbar text-sm font-medium tracking-wide pt-4">
                 <a href="index.html" class="pb-4 border-b-2 border-transparent text-gray-400 hover:text-white transition-all whitespace-nowrap">Overview</a>
                 <a href="terms.html" class="pb-4 border-b-2 border-transparent text-gray-400 hover:text-white transition-all whitespace-nowrap">ToS</a>
                 <a href="privacy.html" class="pb-4 border-b-2 border-transparent text-gray-400 hover:text-white transition-all whitespace-nowrap">Privacy</a>
@@ -38,43 +60,147 @@
         </div>
     </div>
 
-    <section class="py-16 bg-witchly-surface border-b border-gray-800 relative">
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h1 class="text-4xl font-bold text-white mb-4">Community <span class="text-witchly-primary">Guidelines</span></h1>
-            <p class="text-gray-400">Rules for Discord & Support.</p>
-        </div>
-    </section>
-
-    <main class="py-16 max-w-4xl mx-auto px-4 flex-grow">
-        <div class="bg-witchly-surface p-8 rounded-lg border border-gray-700 shadow-lg">
-            <h2 class="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-4">Witchly Rules</h2>
-            
-            <ol class="space-y-3 text-gray-300 list-decimal pl-5 marker:text-witchly-primary marker:font-bold">
-                <li class="pl-2">Be respectful, civil, and welcoming.</li>
-                <li class="pl-2">Avoid posting inappropriate or unsafe content.</li>
-                <li class="pl-2">Do not misuse or spam in any of the channels.</li>
-                <li class="pl-2">Do not join our server to promote your content to others.</li>
-                <li class="pl-2">Any NSFW content is strictly prohibited on this server.</li>
-                <li class="pl-2">Do not buy/sell/trade/give away anything, we do not support any of those.</li>
-                <li class="pl-2">Do not use our server as a dating platform.</li>
-                <li class="pl-2">We expect you to speak basic English as this is considered the primary language of the server.</li>
-                <li class="pl-2">Your usernames and avatars must be appropriate and SFW.</li>
-                <li class="pl-2">Spamming, chaining, or any other sort of disruptions in the server is not supported.</li>
-                <li class="pl-2">Controversial topics such as religion, politics, and others should not be bought up in this server.</li>
-                <li class="pl-2">Do not attempt to bypass any banned words.</li>
-                <li class="pl-2">Don't ping Staff, Moderators, or Owners without a legitimate reason behind it.</li>
-                <li class="pl-2">Alternative accounts are not allowed/entertained under any circumstances.</li>
-                <li class="pl-2">No Discord servers invite links or codes are to be posted on the server.</li>
-                <li class="pl-2">Any sort of self-advertisements are prohibited.</li>
-                <li class="pl-2">Do not role-play within the server.</li>
-                <li class="pl-2">Raiding the server is not allowed.</li>
-                <li class="pl-2">Use basic common sense before asking questions.</li>
-                <li class="pl-2">Read our Privacy Policy and Terms Of Service before participating in the server.</li>
-            </ol>
-
-            <div class="mt-8 pt-6 border-t border-gray-700 text-sm text-gray-500 italic text-center">
-                <p>The above rules may be updated at any point in time. The rules may be applied differently under different circumstances to different users.</p>
+    <header class="relative py-20 bg-gradient-to-b from-witchly-surface to-witchly-base border-b border-gray-800">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-block p-3 rounded-full bg-witchly-primary/10 mb-6 border border-witchly-primary/20">
+                <i class="fa-solid fa-scale-balanced text-2xl text-witchly-primary"></i>
             </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                Community <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-600">Guidelines</span>
+            </h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                We strive to keep Witchly.Host a safe, welcoming, and magical place for everyone. Please read our rules for Discord and Support interactions.
+            </p>
+        </div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-witchly-primary/5 blur-3xl rounded-full -z-0 pointer-events-none"></div>
+    </header>
+
+    <main class="flex-grow py-16 px-6">
+        <div class="max-w-5xl mx-auto">
+
+            <div class="bg-witchly-surface border border-gray-800 rounded-2xl p-8 mb-10 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-2">The Witchly Code</h2>
+                    <p class="text-gray-400 text-sm max-w-xl">
+                        Violating these rules may result in warnings, kicks, or permanent bans depending on the severity of the infraction.
+                    </p>
+                </div>
+                <a href="https://discord.witchly.host" class="bg-[#5865F2] hover:bg-[#4752c4] text-white px-6 py-3 rounded-lg font-bold transition-colors shadow-lg shadow-[#5865f2]/20 whitespace-nowrap">
+                    <i class="fa-brands fa-discord mr-2"></i> Join Discord
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">1</span>
+                    <p class="text-gray-300">Be respectful, civil, and welcoming.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">2</span>
+                    <p class="text-gray-300">Avoid posting inappropriate or unsafe content.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">3</span>
+                    <p class="text-gray-300">Do not misuse or spam in any of the channels.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">4</span>
+                    <p class="text-gray-300">Do not join our server to promote your content to others.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-red-900/30 hover:border-red-500/50 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-red-900/20 border border-red-900/50 rounded-full flex items-center justify-center text-red-500 font-bold text-sm group-hover:bg-red-500 group-hover:text-white transition-colors">5</span>
+                    <p class="text-red-200">Any NSFW content is strictly prohibited on this server.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">6</span>
+                    <p class="text-gray-300">Do not buy/sell/trade/give away anything, we do not support any of those.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">7</span>
+                    <p class="text-gray-300">Do not use our server as a dating platform.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">8</span>
+                    <p class="text-gray-300">We expect you to speak basic English as this is considered the primary language of the server.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">9</span>
+                    <p class="text-gray-300">Your usernames and avatars must be appropriate and SFW.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">10</span>
+                    <p class="text-gray-300">Spamming, chaining, or any other sort of disruptions in the server is not supported.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">11</span>
+                    <p class="text-gray-300">Controversial topics such as religion, politics, and others should not be bought up in this server.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">12</span>
+                    <p class="text-gray-300">Do not attempt to bypass any banned words.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">13</span>
+                    <p class="text-gray-300">Don't ping Staff, Moderators, or Owners without a legitimate reason behind it.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">14</span>
+                    <p class="text-gray-300">Alternative accounts are not allowed/entertained under any circumstances.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">15</span>
+                    <p class="text-gray-300">No Discord servers invite links or codes are to be posted on the server.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">16</span>
+                    <p class="text-gray-300">Any sort of self-advertisements are prohibited.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">17</span>
+                    <p class="text-gray-300">Do not role-play within the server.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-red-900/30 hover:border-red-500/50 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-red-900/20 border border-red-900/50 rounded-full flex items-center justify-center text-red-500 font-bold text-sm group-hover:bg-red-500 group-hover:text-white transition-colors">18</span>
+                    <p class="text-red-200">Raiding the server is not allowed.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">19</span>
+                    <p class="text-gray-300">Use basic common sense before asking questions.</p>
+                </div>
+
+                <div class="bg-witchly-surface p-5 rounded-xl border border-gray-800 hover:border-witchly-primary/40 transition-all group flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-witchly-base border border-gray-700 rounded-full flex items-center justify-center text-witchly-primary font-bold text-sm group-hover:bg-witchly-primary group-hover:text-white transition-colors">20</span>
+                    <p class="text-gray-300">Read our Privacy Policy and Terms Of Service before participating in the server.</p>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center text-sm text-gray-500 border-t border-gray-800 pt-8">
+                <i class="fa-solid fa-circle-info mb-2 text-lg"></i>
+                <p class="italic max-w-2xl mx-auto">
+                    "The above rules may be updated at any point in time. The rules may be applied differently under different circumstances to different users."
+                </p>
+            </div>
+
         </div>
     </main>
 

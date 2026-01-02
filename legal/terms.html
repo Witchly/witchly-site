@@ -2,33 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Premium Game Hosting for Minecraft, Rust, and Palworld. Powered by i9 processors, NVMe SSDs, and 24/7 Support.">
-<meta name="theme-color" content="#6d28d9">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Witchly.host | High Performance Game Hosting">
-<meta property="og:description" content="Deploy your game server in seconds. 99.9% Uptime, DDoS Protection, and Instant Setup.">
-<meta property="og:image" content="https://witchly.host/images/logo.png">
-<meta property="og:url" content="https://witchly.host/">
-<meta property="twitter:card" content="summary">
-<meta property="twitter:title" content="Witchly.host | Game Hosting">
-<meta property="twitter:description" content="Deploy your game server in seconds. Powered by i9 processors.">
-<meta property="twitter:image" content="https://witchly.host/images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for Witchly.host. Allowable usage, liability limitations, and user agreements.">
+    <meta name="theme-color" content="#6d28d9">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Terms of Service | Witchly.host">
+    <meta property="og:description" content="Legally binding agreement and usage guidelines.">
+    <meta property="og:image" content="https://witchly.host/images/logo.png">
+    
     <title>Terms of Service | Witchly.host</title>
     <link rel="icon" type="image/png" href="../images/logo.png">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6' } } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        witchly: {
+                            base: '#0f172a',    // Slate 900
+                            surface: '#1e293b', // Slate 800
+                            card: '#334155',    // Slate 700
+                            primary: '#7c3aed', // Violet 600
+                            primaryHover: '#6d28d9' // Violet 700
+                        }
+                    }
+                }
+            }
+        }
     </script>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
-<body class="bg-witchly-base text-gray-200 font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-witchly-base text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-witchly-primary selection:text-white">
+
     <div id="navbar-placeholder"></div>
 
-    <div class="mt-20 bg-gray-900 border-b border-gray-800 relative z-30">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="flex items-center gap-8 overflow-x-auto no-scrollbar text-sm font-bold tracking-wide pt-4">
+    <div class="mt-20 bg-witchly-base/80 backdrop-blur-md border-b border-gray-800 sticky top-0 z-40">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex items-center gap-8 overflow-x-auto no-scrollbar text-sm font-medium tracking-wide pt-4">
                 <a href="index.html" class="pb-4 border-b-2 border-transparent text-gray-400 hover:text-white transition-all whitespace-nowrap">Overview</a>
                 <a href="terms.html" class="pb-4 border-b-2 border-witchly-primary text-white whitespace-nowrap">ToS</a>
                 <a href="privacy.html" class="pb-4 border-b-2 border-transparent text-gray-400 hover:text-white transition-all whitespace-nowrap">Privacy</a>
@@ -38,102 +60,225 @@
         </div>
     </div>
 
-    <section class="py-16 bg-witchly-surface border-b border-gray-800 relative">
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h1 class="text-4xl font-bold text-white mb-4">Terms of <span class="text-witchly-primary">Use</span></h1>
-            <p class="text-gray-400">Legally binding agreement.</p>
+    <header class="relative py-20 bg-gradient-to-b from-witchly-surface to-witchly-base border-b border-gray-800">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-block p-3 rounded-full bg-witchly-primary/10 mb-6 border border-witchly-primary/20">
+                <i class="fa-solid fa-file-contract text-2xl text-witchly-primary"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                Terms of <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-600">Service</span>
+            </h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                Please read these terms carefully. They define the legal relationship between you and Witchly.Host.
+            </p>
+            <p class="text-xs text-gray-500 mt-4 uppercase tracking-widest font-semibold">Last Updated: February 2026</p>
         </div>
-    </section>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-witchly-primary/5 blur-3xl rounded-full -z-0 pointer-events-none"></div>
+    </header>
 
-    <main class="py-16 max-w-4xl mx-auto px-4 flex-grow">
-        <div class="prose prose-invert max-w-none">
-            
-            <h3>Agreement To Terms</h3>
-            <p>These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and Witchly.Host, doing business as Witchly ("Witchly," “we," “us," or “our”), concerning your access to and use of the https://witchly.host/ website as well as any other media form, media channel related, linked, or otherwise connected thereto (collectively, the “Site”). IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF USE, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE AND YOU MUST DISCONTINUE USE IMMEDIATELY.</p>
-            <p>Supplemental terms and conditions or documents that may be posted on the Site from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Terms of Use from time to time. We will alert you about any changes by updating the “Last updated” date of these Terms of Use, and you waive any right to receive specific notice of each such change.</p>
+    <main class="flex-grow py-16 px-6">
+        <div class="max-w-5xl mx-auto space-y-20">
 
-            <h3>Intellectual Property Rights</h3>
-            <p>Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, text, and graphics on the Site (collectively, the “Content”) and the trademarks, service marks, and logos contained therein (the “Marks”) are owned or controlled by us or licensed to us. The Content and the Marks are provided on the Site “AS IS” for your information and personal use only.</p>
+            <section class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 bg-witchly-surface p-8 rounded-2xl border border-gray-700/50">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fa-solid fa-handshake text-witchly-primary text-xl"></i>
+                        <h2 class="text-2xl font-bold text-white">Agreement to Terms</h2>
+                    </div>
+                    <p class="leading-relaxed mb-4 text-gray-300">
+                        These Terms of Use constitute a legally binding agreement between you ("You") and Witchly.Host ("Witchly", "We", "Us"). By accessing <a href="https://witchly.host" class="text-witchly-primary hover:underline">https://witchly.host</a> (the "Site"), you agree that you have read, understood, and accept these terms.
+                    </p>
+                    <div class="p-4 bg-red-500/10 border-l-4 border-red-500 rounded-r-lg">
+                        <p class="text-sm text-red-200">
+                            <strong>Important:</strong> IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF USE, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE AND YOU MUST DISCONTINUE USE IMMEDIATELY.
+                        </p>
+                    </div>
+                </div>
 
-            <h3>User Representations</h3>
-            <p>By using the Site, you represent and warrant that: (1) all registration information you submit will be true, accurate, current, and complete; (2) you will maintain the accuracy of such information; (3) you have the legal capacity and you agree to comply with these Terms of Use; (4) you are not a minor in the jurisdiction in which you reside, or if a minor, you have received parental permission; (5) you will not access the Site through automated or non-human means; (6) you will not use the Site for any illegal or unauthorized purpose.</p>
+                <div class="space-y-6">
+                    <div class="bg-witchly-base p-6 rounded-xl border border-gray-800">
+                        <h3 class="font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-copyright text-gray-500"></i> Intellectual Property
+                        </h3>
+                        <p class="text-sm text-gray-400">
+                            The Site, source code, databases, and trademarks are our proprietary property. Provided "AS IS" for personal use only.
+                        </p>
+                    </div>
+                    <div class="bg-witchly-base p-6 rounded-xl border border-gray-800">
+                        <h3 class="font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-user-lock text-gray-500"></i> User Registration
+                        </h3>
+                        <p class="text-sm text-gray-400">
+                            You agree to keep your password confidential and are responsible for all account activity.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-            <h3>User Registrations</h3>
-            <p>You may be required to register with the Site. You agree to keep your password confidential and will be responsible for all use of your account and password.</p>
+            <section>
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-white">Prohibited Activities</h2>
+                    <p class="text-gray-400 mt-2">To maintain a safe environment, the following actions are strictly forbidden.</p>
+                </div>
 
-            <h3>Prohibited Activities</h3>
-            <p>You may not access or use the Site for any purpose other than that for which we make the Site available. As a user of the Site, you agree not to:</p>
-            <ul class="list-disc pl-5">
-                <li>Systematically retrieve data or other content from the Site to create or compile, directly or indirectly, a collection, compilation, database, or directory without written permission from us.</li>
-                <li>Trick, defraud, or mislead us and other users, especially in any attempt to learn sensitive account information such as user passwords.</li>
-                <li>Circumvent, disable, or otherwise interfere with security-related features of the Site.</li>
-                <li>Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Site.</li>
-                <li>Use any information obtained from the Site in order to harass, abuse, or harm another person.</li>
-                <li>Make improper use of our support services or submit false reports of abuse or misconduct.</li>
-                <li>Engage in unauthorized framing of or linking to the Site.</li>
-                <li>Upload or transmit viruses, Trojan horses, or other material, including excessive use of capital letters and spamming.</li>
-                <li>Engage in any automated use of the system, such as using scripts to send comments or messages, or using any data mining, robots, or similar data gathering tools.</li>
-                <li>Attempt to impersonate another user or person or use the username of another user.</li>
-                <li>Interfere with, disrupt, or create an undue burden on the Site or the networks or services connected to the Site.</li>
-                <li>Harass, annoy, intimidate, or threaten any of our employees or agents.</li>
-                <li>Attempt to bypass any measures of the Site designed to prevent or restrict access to the Site.</li>
-                <li>Copy or adapt the Site’s software, including but not limited to Flash, PHP, HTML, JavaScript, or other code.</li>
-                <li>Except as may be the result of standard search engine or Internet browser usage, use, launch, develop, or distribute any automated system, including without limitation, any spider, robot, cheat utility, scraper, or offline reader.</li>
-                <li>Use a buying agent or purchasing agent to make purchases on the Site.</li>
-                <li>Make any unauthorized use of the Site, including collecting usernames and/or email addresses of users by electronic or other means for the purpose of sending unsolicited email.</li>
-                <li>Use the Site as part of any effort to compete with us or otherwise use the Site and/or the Content for any revenue-generating endeavor.</li>
-                <li><strong>Under the one user one account policy</strong> followed by us you are only authorized to make a single account to access our services, creation of multiple indispensable accounts shall lead to the termination of all accounts linked to you.</li>
-                <li class="font-bold text-red-400">Prohibited uses of services include Crypto currency mining, abusing, hacking, overloading bumps and/or any illegal exertion.</li>
-            </ul>
+                <div class="bg-witchly-surface border border-gray-800 rounded-2xl p-8">
+                    <div class="grid md:grid-cols-2 gap-y-4 gap-x-8">
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Systematically retrieve data, scrape, or mine content.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Trick, defraud, or mislead us or other users.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Interfere with security-related features.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Disparage, tarnish, or harm us or the Site.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Harass, abuse, or harm another person.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Submit false reports of abuse or misconduct.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Upload viruses, Trojan horses, or spam.</span>
+                            </li>
+                        </ul>
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Use scripts, robots, or automated data gathering tools.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Impersonate another user or person.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Interfere with or disrupt the Site or networks.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Harass or threaten our employees or agents.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Attempt to bypass access restriction measures.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Copy software (Flash, PHP, HTML, JS, etc.).</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span>Use the Site to compete with us.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-            <h3>Contribution License</h3>
-            <p>You and the Site agree that we may access, store, process, and use any information and personal data that you provide following the terms of the Privacy Policy and your choices (including settings).</p>
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-orange-500/5 border border-orange-500/20 rounded-xl p-5 flex gap-4">
+                        <div class="text-orange-500 text-2xl"><i class="fa-solid fa-users-slash"></i></div>
+                        <div>
+                            <h4 class="font-bold text-orange-200 text-sm mb-1">One User, One Account</h4>
+                            <p class="text-xs text-gray-400">You are only authorized to make a single account. Creation of multiple accounts will lead to termination of all linked accounts.</p>
+                        </div>
+                    </div>
+                    <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-5 flex gap-4">
+                        <div class="text-red-500 text-2xl"><i class="fa-solid fa-ban"></i></div>
+                        <div>
+                            <h4 class="font-bold text-red-200 text-sm mb-1">Strict Zero Tolerance</h4>
+                            <p class="text-xs text-gray-400">Prohibited uses include Cryptocurrency mining, abusing, hacking, overloading ("bumps"), and any illegal exertion.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <h3>Social Media</h3>
-            <p>As part of the functionality of the Site, you may link your account with online accounts you have with third-party service providers (each such account, a “Third-Party Account”). By granting us access to any Third-Party Accounts, you understand that we may access, make available, and store (if applicable) any content that you have provided to and stored in your Third-Party Account.</p>
+            <section class="grid md:grid-cols-2 gap-8">
+                <div class="bg-witchly-surface p-6 rounded-xl border border-gray-800 hover:border-witchly-primary/30 transition-colors">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-link text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">External Content</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><strong class="text-white">Social Media:</strong> Linking accounts grants us access to content stored in that third-party account.</li>
+                        <li><strong class="text-white">Third-Party Links:</strong> We do not monitor external sites; access them at your own risk.</li>
+                        <li><strong class="text-white">Advertisers:</strong> Advertisers take full responsibility for ads placed on the Site.</li>
+                    </ul>
+                </div>
 
-            <h3>Third-Party Website And Content</h3>
-            <p>The Site may contain links to other websites ("Third-Party Websites"). Such Third-Party Websites and Third-Party Content are not investigated, monitored, or checked for accuracy by us. If you decide to leave the Site and access the Third-Party Websites, you do so at your own risk.</p>
+                <div class="bg-witchly-surface p-6 rounded-xl border border-gray-800 hover:border-witchly-primary/30 transition-colors">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-screwdriver-wrench text-purple-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Site Management</h3>
+                    <p class="text-sm text-gray-400 mb-3">We reserve the right (but not the obligation) to:</p>
+                    <ul class="list-disc list-inside text-sm text-gray-400 space-y-1 mb-4">
+                        <li>Monitor the Site for violations.</li>
+                        <li>Take legal action against violators.</li>
+                        <li>Restrict or disable access to Contributions.</li>
+                        <li>Remove excessive or burdensome files.</li>
+                    </ul>
+                    <p class="text-xs text-gray-500 mt-4 border-t border-gray-700 pt-3">
+                        We may modify or remove site content at any time without notice.
+                    </p>
+                </div>
+            </section>
 
-            <h3>Advertisers</h3>
-            <p>We allow advertisers to display their advertisements and other information in certain areas of the Site. If you are an advertiser, you shall take full responsibility for any advertisements you place on the Site.</p>
+            <section class="space-y-6">
+                <div class="bg-witchly-surface border-l-4 border-witchly-primary p-6 rounded-r-xl">
+                    <h4 class="text-white font-bold mb-2">DISCLAIMER</h4>
+                    <p class="text-sm text-gray-400 italic">
+                        THE SITE IS PROVIDED ON AN "AS-IS" AND "AS-AVAILABLE" BASIS. YOU AGREE THAT YOUR USE OF THE SITE AND SERVICES WILL BE AT YOUR SOLE RISK. WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+                    </p>
+                </div>
 
-            <h3>Site Management</h3>
-            <p>We reserve the right, but not the obligation, to: (1) monitor the Site for violations of these Terms of Use; (2) take appropriate legal action against anyone who, in our sole discretion, violates the law or these Terms of Use; (3) refuse, restrict access to, limit the availability of, or disable any of your Contributions; (4) remove from the Site or otherwise disable all files and content that are excessive in size; and (5) otherwise manage the Site in a manner designed to protect our rights and property.</p>
+                <div class="bg-witchly-surface border-l-4 border-red-500 p-6 rounded-r-xl">
+                    <h4 class="text-white font-bold mb-2">LIMITATIONS OF LIABILITY</h4>
+                    <p class="text-sm text-gray-400 italic">
+                        IN NO EVENT WILL WE, OUR DIRECTORS, OR AGENTS BE LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, INCIDENTAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, OR DATA LOSS ARISING FROM YOUR USE OF THE SITE.
+                    </p>
+                </div>
 
-            <h3>Privacy Policy</h3>
-            <p>We care about data privacy and security. Please review our Privacy Policy. By using the Site, you agree to be bound by our Privacy Policy, which is incorporated into these Terms of Use.</p>
+                <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-500 px-2">
+                    <p><strong>Corrections:</strong> There may be typographical errors or omissions on the Site. We reserve the right to correct any errors at any time.</p>
+                    <p><strong>User Data:</strong> Although we perform regular backups, you are solely responsible for all data you transmit. We are not liable for data loss or corruption.</p>
+                </div>
+            </section>
 
-            <h3>Term and Termination</h3>
-            <p>These Terms of Use shall remain in full force and effect while you use the Site. WITHOUT LIMITING ANY OTHER PROVISION OF THESE TERMS OF USE, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE SITE TO ANY PERSON FOR ANY REASON OR FOR NO REASON.</p>
-
-            <h3>Modifications and Interruptions</h3>
-            <p>We reserve the right to change, modify, or remove the contents of the Site at any time or for any reason at our sole discretion without notice. We cannot guarantee the Site will be available at all times. We may experience hardware, software, or other problems resulting in interruptions, delays, or errors.</p>
-
-            <h3>Corrections</h3>
-            <p>There may be information on the Site that contains typographical errors, inaccuracies, or omissions, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions at any time.</p>
-
-            <blockquote class="border-l-4 border-witchly-primary pl-4 my-8 italic bg-gray-900/50 p-4 rounded-r">
-                <strong>DISCLAIMER</strong><br>
-                THE SITE IS PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SITE AND OUR SERVICES WILL BE AT YOUR SOLE RISK. WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
-            </blockquote>
-
-            <blockquote class="border-l-4 border-red-500 pl-4 my-8 italic bg-gray-900/50 p-4 rounded-r">
-                <strong>LIMITATIONS OF LIABILITY</strong><br>
-                IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SITE.
-            </blockquote>
-
-            <h3>User Data</h3>
-            <p>We will maintain certain data that you transmit to the Site for the purpose of managing the performance of the Site, as well as data relating to your use of the Site. Although we perform regular routine backups of data, you are solely responsible for all data that you transmit or that relates to any activity you have undertaken using the Site.</p>
-
-            <h3>Miscellaneous</h3>
-            <p>These Terms of Use and any policies or operating rules posted by us on the Site constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Terms of Use shall not operate as a waiver of such right or provision.</p>
-
-            <h3>Contact Us</h3>
-            <p>In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at:</p>
-            <p><strong>Witchly.Host</strong><br>
-            <a href="mailto:support@witchly.host" class="text-witchly-primary hover:underline">support@witchly.host</a><br>
-            <a href="https://discord.witchly.host" class="text-witchly-primary hover:underline">https://discord.witchly.host</a></p>
+            <section class="border-t border-gray-800 pt-10">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">Miscellaneous</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            These Terms of Use and any policies posted by us constitute the entire agreement between you and us. Our failure to exercise any right or provision shall not operate as a waiver. We may assign our rights to others at any time.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-witchly-surface to-witchly-base border border-gray-700 rounded-xl p-8 text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">Questions?</h3>
+                        <p class="text-gray-400 text-sm mb-6">Need clarification? We are here to help.</p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4">
+                            <a href="mailto:support@witchly.host" class="px-6 py-2.5 bg-gray-700 hover:bg-gray-600 rounded-lg text-white font-medium transition-colors text-sm">
+                                <i class="fa-solid fa-envelope mr-2"></i> Email Support
+                            </a>
+                            <a href="https://discord.witchly.host" class="px-6 py-2.5 bg-[#5865F2] hover:bg-[#4752c4] rounded-lg text-white font-medium transition-colors text-sm">
+                                <i class="fa-brands fa-discord mr-2"></i> Discord
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </div>
     </main>

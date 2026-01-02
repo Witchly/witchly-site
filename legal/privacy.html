@@ -2,33 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Premium Game Hosting for Minecraft, Rust, and Palworld. Powered by i9 processors, NVMe SSDs, and 24/7 Support.">
-<meta name="theme-color" content="#6d28d9">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Witchly.host | High Performance Game Hosting">
-<meta property="og:description" content="Deploy your game server in seconds. 99.9% Uptime, DDoS Protection, and Instant Setup.">
-<meta property="og:image" content="https://witchly.host/images/logo.png">
-<meta property="og:url" content="https://witchly.host/">
-<meta property="twitter:card" content="summary">
-<meta property="twitter:title" content="Witchly.host | Game Hosting">
-<meta property="twitter:description" content="Deploy your game server in seconds. Powered by i9 processors.">
-<meta property="twitter:image" content="https://witchly.host/images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Witchly.Host. Learn how we collect, use, and protect your data.">
+    <meta name="theme-color" content="#6d28d9">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Privacy Policy | Witchly.host">
+    <meta property="og:description" content="Transparent data practices for a magical hosting experience.">
+    <meta property="og:image" content="https://witchly.host/images/logo.png">
+    <meta property="og:url" content="https://witchly.host/privacy.html">
+    
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="Privacy Policy | Witchly.host">
+    <meta property="twitter:description" content="Transparent data practices for a magical hosting experience.">
+    <meta property="twitter:image" content="https://witchly.host/images/logo.png">
+
     <title>Privacy Policy | Witchly.host</title>
     <link rel="icon" type="image/png" href="../images/logo.png">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6' } } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        witchly: {
+                            base: '#0f172a',    // Slate 900
+                            surface: '#1e293b', // Slate 800
+                            card: '#334155',    // Slate 700
+                            primary: '#7c3aed', // Violet 600
+                            primaryHover: '#6d28d9' // Violet 700
+                        }
+                    }
+                }
+            }
+        }
     </script>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+    </style>
 </head>
-<body class="bg-witchly-base text-gray-200 font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-witchly-base text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-witchly-primary selection:text-white">
+
     <div id="navbar-placeholder"></div>
 
-    <div class="mt-20 bg-gray-900 border-b border-gray-800 relative z-30">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="flex items-center gap-8 overflow-x-auto no-scrollbar text-sm font-bold tracking-wide pt-4">
+    <div class="mt-20 bg-witchly-base/80 backdrop-blur-md border-b border-gray-800 sticky top-0 z-40">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex items-center gap-8 overflow-x-auto no-scrollbar text-sm font-medium tracking-wide pt-4">
                 <a href="index.html" class="pb-4 border-b-2 border-transparent text-gray-400 hover:text-white transition-all whitespace-nowrap">Overview</a>
                 <a href="terms.html" class="pb-4 border-b-2 border-transparent text-gray-400 hover:text-white transition-all whitespace-nowrap">ToS</a>
                 <a href="privacy.html" class="pb-4 border-b-2 border-witchly-primary text-white whitespace-nowrap">Privacy</a>
@@ -38,83 +65,224 @@
         </div>
     </div>
 
-    <section class="py-16 bg-witchly-surface border-b border-gray-800 relative">
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h1 class="text-4xl font-bold text-white mb-4">Privacy <span class="text-witchly-primary">Policy</span></h1>
-            <p class="text-gray-400">At Witchly.Host, one of our main priorities is the privacy of our visitors.</p>
+    <header class="relative py-20 bg-gradient-to-b from-witchly-surface to-witchly-base border-b border-gray-800">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-block p-3 rounded-full bg-witchly-primary/10 mb-6 border border-witchly-primary/20">
+                <i class="fa-solid fa-shield-halved text-2xl text-witchly-primary"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                Privacy <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-600">Policy</span>
+            </h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                Trust is the foundation of Witchly.Host. Here is a transparent breakdown of how we handle your data, your rights, and how we keep your information secure.
+            </p>
         </div>
-    </section>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-witchly-primary/5 blur-3xl rounded-full -z-0 pointer-events-none"></div>
+    </header>
 
-    <main class="py-16 max-w-4xl mx-auto px-4 flex-grow">
-        <div class="prose prose-invert max-w-none">
-            <p>At Witchly.Host, accessible from https://witchly.host, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Witchly.Host and how we use it.</p>
-            <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
-            <p>This Privacy Policy applies only to our online activities and is valid for visitors to our website and our discord server, with regards to the information that they shared and/or collect in Witchly.Host. This policy is not applicable to any information collected offline or via any other source apart from the website or our discord server strictly.</p>
+    <main class="flex-grow py-16 px-6">
+        <div class="max-w-5xl mx-auto space-y-20">
 
-            <h3>Consent</h3>
-            <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
+            <section class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-4">Introduction & Consent</h2>
+                    <p class="leading-relaxed mb-4">
+                        At <strong>Witchly.Host</strong> (accessible from https://witchly.host), protecting the privacy of our visitors is one of our main priorities. By using our website and Discord server, you hereby consent to this Privacy Policy and agree to its terms.
+                    </p>
+                    <p class="leading-relaxed text-sm text-gray-400">
+                        This policy applies to our online activities and is valid for visitors to our website regarding information shared and/or collected here. It does not apply to offline activities or other sources.
+                    </p>
+                </div>
+                <div class="bg-witchly-surface p-6 rounded-2xl border border-gray-700/50">
+                    <h3 class="font-semibold text-white mb-3"><i class="fa-solid fa-circle-info mr-2 text-witchly-primary"></i>Quick Summary</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span>We only collect data necessary to provide hosting services.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span>We never sell your personal data to third parties.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span>You have full rights to access, delete, or manage your data.</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-            <h3>Information we collect</h3>
-            <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you in the Terms of Service which is accessible from <a href="https://witchly.host/terms" class="text-witchly-primary hover:underline">https://witchly.host/terms</a></p>
-            <p>If you contact us directly, we may receive additional information about you such as your name, username, email address, Internet protocol (IP) address, contents of the message and/or attachments you may send us, and any other information you may choose to provide.</p>
-            <p>When you register for an Account, we may ask for your contact information, including items such as name, username, email address, Internet protocol (IP) address and certain discord authentication.</p>
+            <section>
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-white">Your Data</h2>
+                    <p class="text-gray-400 mt-2">What we collect and how we use it.</p>
+                </div>
 
-            <h3>How we use your information</h3>
-            <p>We use the information we collect in various ways, including to:</p>
-            <ul class="list-disc pl-5">
-                <li>Provide, operate, and maintain our website</li>
-                <li>Improve, personalize, and expand our website</li>
-                <li>Understand and analyze how you use our website</li>
-                <li>Develop new products, services, features, and functionality</li>
-                <li>Send you emails to provide you with updates and other information relating to the website, and for marketing and promotional purposes</li>
-                <li>Find and prevent fraud</li>
-            </ul>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-witchly-surface p-6 rounded-xl border border-gray-800 hover:border-witchly-primary/50 transition-colors group">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
+                            <i class="fa-solid fa-database text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Information Collected</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            When you register or contact us, we may ask for:
+                        </p>
+                        <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+                            <li>Name & Username</li>
+                            <li>Email Address</li>
+                            <li>Internet Protocol (IP) Address</li>
+                            <li>Discord Authentication Data</li>
+                            <li>Message contents & attachments</li>
+                        </ul>
+                    </div>
 
-            <h3>Log Files</h3>
-            <p>Witchly.Host follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files includes user name, creation of a server, list of online servers, date and time stamp. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing server utilization, administering the site, tracking users' movement on the website, and gathering demographic information, preventing fraud and multiple user entries.</p>
+                    <div class="bg-witchly-surface p-6 rounded-xl border border-gray-800 hover:border-witchly-primary/50 transition-colors group">
+                        <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors">
+                            <i class="fa-solid fa-server text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">How We Use It</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Your data helps us operate Witchly.Host. We use it to:
+                        </p>
+                        <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+                            <li>Provide, operate, and maintain the site</li>
+                            <li>Improve and personalize content</li>
+                            <li>Analyze site usage</li>
+                            <li>Develop new products and features</li>
+                            <li>Send updates, marketing, and promo emails</li>
+                            <li>Find and prevent fraud</li>
+                        </ul>
+                    </div>
 
-            <h3>Cookies and Web Beacons</h3>
-            <p>Like any other website, Witchly.Host uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+                    <div class="bg-witchly-surface p-6 rounded-xl border border-gray-800 hover:border-witchly-primary/50 transition-colors group">
+                        <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
+                            <i class="fa-solid fa-file-code text-orange-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Logs & Cookies</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-2">
+                            We use standard log files and cookies to analyze trends and administer the site.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">
+                            Logs include IP addresses, browser type, ISP, date/time stamps, and referring/exit pages. This data is not linked to personally identifiable information.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-            <h3>Google DoubleClick DART Cookie</h3>
-            <p>Google is one of the third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL – <a href="https://policies.google.com/technologies/ads" target="_blank" class="text-witchly-primary hover:underline">https://policies.google.com/technologies/ads</a></p>
+            <section class="bg-witchly-surface/50 rounded-2xl p-8 border border-gray-800">
+                <h2 class="text-2xl font-bold text-white mb-4">Third-Party Partners & Ads</h2>
+                <div class="prose prose-invert max-w-none text-gray-400 text-sm">
+                    <p class="mb-4">
+                        We may work with third-party advertisers (like Google AdSense) who use cookies (such as DART cookies) to serve ads based on your visit to Witchly.Host and other sites.
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-1 bg-witchly-base p-4 rounded-lg border border-gray-700/50">
+                            <h4 class="text-white font-bold mb-2">Your Ad Choices</h4>
+                            <p>You can choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at <a href="https://policies.google.com/technologies/ads" target="_blank" class="text-witchly-primary hover:underline">Google Ads Policy</a>. You can also disable cookies via your browser settings.</p>
+                        </div>
+                        <div class="flex-1 bg-witchly-base p-4 rounded-lg border border-gray-700/50">
+                            <h4 class="text-white font-bold mb-2">External Links</h4>
+                            <p>Our Privacy Policy does not apply to other advertisers or websites. We advise you to consult the respective Privacy Policies of these third-party ad servers for more detailed information, including opt-out instructions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <h3>Advertising Partners Privacy Policies</h3>
-            <p>You may consult this list to find the Privacy Policy for each of the advertising partners of Witchly.host.</p>
-            <p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Witchly.Host, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
-            <p>Note that Witchly.Host has no access to or control over these cookies that are used by third-party advertisers.</p>
+            <section>
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-white">Your Rights</h2>
+                    <p class="text-gray-400 mt-2">Comprehensive protection under GDPR and CCPA.</p>
+                </div>
 
-            <h3>Google AdSense</h3>
-            <p>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to Witchly.Host or other websites. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to Witchly.host and/or other sites on the Internet. Users may opt out of personalized advertising by visiting Ads Settings.</p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center">
+                            <i class="fa-solid fa-earth-europe text-witchly-primary mr-3"></i> GDPR Data Protection
+                        </h3>
+                        <p class="text-sm text-gray-400 mb-4">Every user is entitled to the following:</p>
+                        <div class="space-y-4">
+                            <div class="flex gap-4">
+                                <div class="mt-1 min-w-[24px]"><i class="fa-solid fa-eye text-gray-500"></i></div>
+                                <div>
+                                    <h4 class="text-white font-medium">Right to Access</h4>
+                                    <p class="text-sm text-gray-400">Request copies of your personal data (small fee may apply).</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="mt-1 min-w-[24px]"><i class="fa-solid fa-pen-to-square text-gray-500"></i></div>
+                                <div>
+                                    <h4 class="text-white font-medium">Right to Rectification</h4>
+                                    <p class="text-sm text-gray-400">Request correction of inaccurate or incomplete information.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="mt-1 min-w-[24px]"><i class="fa-solid fa-trash text-gray-500"></i></div>
+                                <div>
+                                    <h4 class="text-white font-medium">Right to Erasure</h4>
+                                    <p class="text-sm text-gray-400">Request deletion of your personal data.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="mt-1 min-w-[24px]"><i class="fa-solid fa-ban text-gray-500"></i></div>
+                                <div>
+                                    <h4 class="text-white font-medium">Right to Restrict Processing</h4>
+                                    <p class="text-sm text-gray-400">Request that we restrict the processing of your data.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="mt-1 min-w-[24px]"><i class="fa-solid fa-hand text-gray-500"></i></div>
+                                <div>
+                                    <h4 class="text-white font-medium">Right to Object</h4>
+                                    <p class="text-sm text-gray-400">Object to our processing of your personal data.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="mt-1 min-w-[24px]"><i class="fa-solid fa-share-from-square text-gray-500"></i></div>
+                                <div>
+                                    <h4 class="text-white font-medium">Right to Data Portability</h4>
+                                    <p class="text-sm text-gray-400">Request transfer of data to another organization or to you.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <h3>Third-Party Privacy Policies</h3>
-            <p>Witchly.Host's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.</p>
-            <p>You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
+                    <div class="bg-witchly-surface p-6 rounded-xl border border-gray-800">
+                        <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                            <i class="fa-solid fa-flag-usa text-witchly-primary mr-3"></i> CCPA Rights (California)
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-4">Under the CCPA, California consumers have the right to:</p>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start bg-witchly-base p-3 rounded border border-gray-700/50">
+                                <span class="text-witchly-primary font-bold mr-2">1.</span>
+                                <span>Request disclosure of categories and specific pieces of personal data collected.</span>
+                            </li>
+                            <li class="flex items-start bg-witchly-base p-3 rounded border border-gray-700/50">
+                                <span class="text-witchly-primary font-bold mr-2">2.</span>
+                                <span>Request deletion of personal data collected by the business.</span>
+                            </li>
+                            <li class="flex items-start bg-witchly-base p-3 rounded border border-gray-700/50">
+                                <span class="text-witchly-primary font-bold mr-2">3.</span>
+                                <span>Opt-out of the sale of personal data.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-            <h3>CCPA Privacy Rights</h3>
-            <p>Under the CCPA, among other rights, California consumers have the right to:</p>
-            <ul class="list-disc pl-5">
-                <li>Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.</li>
-                <li>Request that a business delete any personal data about the consumer that a business has collected.</li>
-                <li>Request that a business that sells a consumer's personal data, not sell the consumer's personal data.</li>
-            </ul>
-            <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</p>
+                <div class="mt-8 text-center">
+                    <p class="text-sm text-gray-400">
+                        If you wish to exercise any of these rights, please contact us. We have one month to respond to your request.
+                    </p>
+                </div>
+            </section>
 
-            <h3>GDPR Data Protection Rights</h3>
-            <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</p>
-            <ul class="list-disc pl-5">
-                <li><strong>The right to access</strong> – You have the right to request copies of your personal data. We may charge you a small fee for this service.</li>
-                <li><strong>The right to rectification</strong> – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request that we complete the information you believe is incomplete.</li>
-                <li><strong>The right to erasure</strong> – You have the right to request that we erase your personal data, under certain conditions.</li>
-                <li><strong>The right to restrict processing</strong> – You have the right to request that we restrict the processing of your personal data, under certain conditions.</li>
-                <li><strong>The right to object to processing</strong> – You have the right to object to our processing of your personal data, under certain conditions.</li>
-                <li><strong>The right to data portability</strong> – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
-            </ul>
-            <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</p>
+            <section class="border-t border-gray-800 pt-10 text-center max-w-2xl mx-auto">
+                <i class="fa-solid fa-child-reaching text-3xl text-gray-600 mb-4"></i>
+                <h2 class="text-xl font-bold text-white mb-2">Children's Information</h2>
+                <p class="text-gray-400 text-sm">
+                    Witchly.Host does not knowingly collect any Personal Identifiable Information from children under the age of 13. We encourage parents to monitor online activity. If you believe your child has provided this information, please contact us immediately for removal.
+                </p>
+            </section>
 
-            <h3>Children's Information</h3>
-            <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
-            <p>Witchly.Host does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
         </div>
     </main>
 
