@@ -2,107 +2,195 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Premium Game Hosting for Minecraft, Rust, and Palworld. Powered by i9 processors, NVMe SSDs, and 24/7 Support.">
-<meta name="theme-color" content="#6d28d9">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Witchly.host | High Performance Game Hosting">
-<meta property="og:description" content="Deploy your game server in seconds. 99.9% Uptime, DDoS Protection, and Instant Setup.">
-<meta property="og:image" content="https://witchly.host/images/logo.png">
-<meta property="og:url" content="https://witchly.host/">
-<meta property="twitter:card" content="summary">
-<meta property="twitter:title" content="Witchly.host | Game Hosting">
-<meta property="twitter:description" content="Deploy your game server in seconds. Powered by i9 processors.">
-<meta property="twitter:image" content="https://witchly.host/images/logo.png">
-    <title>Network & Status | Witchly.host</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check connection latency to Witchly.Host datacenters. Falkenstein, Germany and Helsinki, Finland.">
+    <meta name="theme-color" content="#6d28d9">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Network Status | Witchly.host">
+    <meta property="og:description" content="Test your connection to our high-performance game servers.">
+    <meta property="og:image" content="https://witchly.host/images/logo.png">
+    
+    <title>Network Status | Witchly.host</title>
     <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', accent: '#4ade80' } } } } }</script>
+    <script>
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, 
+                    colors: { 
+                        witchly: { 
+                            base: '#0f172a',    // Slate 900
+                            surface: '#1e293b', // Slate 800
+                            card: '#334155',    // Slate 700
+                            primary: '#7c3aed', // Violet 600
+                            primaryHover: '#6d28d9', // Violet 700
+                            accent: '#4ade80'   // Green 400
+                        } 
+                    } 
+                } 
+            } 
+        }
+    </script>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+        
+        .ping-btn:active { transform: scale(0.95); }
+    </style>
 </head>
-<body class="bg-witchly-base text-gray-200 font-sans antialiased">
+<body class="bg-witchly-base text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-witchly-primary selection:text-white">
+
     <div id="navbar-placeholder"></div>
 
-    <section class="pt-32 pb-10 bg-witchly-surface border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold text-white mb-4">Global <span class="text-witchly-primary">Network</span></h1>
-            <p class="text-gray-400">Test your connection to our datacenters.</p>
-        </div>
-    </section>
-
-    <main class="py-12 max-w-4xl mx-auto px-4">
-        
-        <div class="bg-black/50 border border-gray-700 rounded-xl p-8 mb-12">
-            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <i class="fa-solid fa-network-wired text-green-400"></i> Latency Test
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-witchly-surface p-6 rounded-lg border border-gray-700 flex justify-between items-center">
-                    <div class="flex items-center gap-4">
-                        <img src="https://flagcdn.com/w40/de.png" class="h-8 w-auto rounded shadow">
-                        <div>
-                            <div class="text-white font-bold">Falkenstein, DE</div>
-                            <div class="text-xs text-gray-500">EU Central</div>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <button onclick="simulatePing('de-ping')" class="bg-gray-800 hover:bg-gray-700 text-white text-xs px-3 py-1 rounded mb-1 transition-colors">TEST</button>
-                        <div id="de-ping" class="text-green-400 font-mono font-bold text-xl">-- ms</div>
-                    </div>
-                </div>
-
-                <div class="bg-witchly-surface p-6 rounded-lg border border-gray-700 flex justify-between items-center">
-                    <div class="flex items-center gap-4">
-                        <img src="https://flagcdn.com/w40/fi.png" class="h-8 w-auto rounded shadow">
-                        <div>
-                            <div class="text-white font-bold">Helsinki, FI</div>
-                            <div class="text-xs text-gray-500">EU North</div>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <button onclick="simulatePing('fi-ping')" class="bg-gray-800 hover:bg-gray-700 text-white text-xs px-3 py-1 rounded mb-1 transition-colors">TEST</button>
-                        <div id="fi-ping" class="text-green-400 font-mono font-bold text-xl">-- ms</div>
-                    </div>
-                </div>
+    <header class="relative pt-32 pb-20 bg-gradient-to-b from-witchly-surface to-witchly-base border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-block p-3 rounded-full bg-witchly-primary/10 mb-6 border border-witchly-primary/20">
+                <i class="fa-solid fa-globe text-2xl text-witchly-primary"></i>
             </div>
-            
-            <p class="text-xs text-gray-500 mt-6 text-center">
-                * Note: This is a browser-based HTTP estimate. In-game UDP latency is usually lower.
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                Global <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-600">Network</span>
+            </h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                Test your connection to our datacenters. We operate on high-speed 1Gbps uplinks to ensure low-latency gaming.
             </p>
         </div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-witchly-primary/5 blur-3xl rounded-full -z-0 pointer-events-none"></div>
+    </header>
 
+    <main class="flex-grow py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            
+            <div class="bg-witchly-surface border border-gray-700/50 rounded-2xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-green-500/10 rounded-full blur-[60px] pointer-events-none"></div>
+
+                <div class="flex items-center gap-4 mb-10 border-b border-gray-700/50 pb-6">
+                    <div class="h-12 w-12 bg-green-500/10 rounded-xl flex items-center justify-center text-green-400 border border-green-500/20">
+                        <i class="fa-solid fa-stopwatch text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">Latency Test</h2>
+                        <p class="text-sm text-gray-400">Ping our nodes to check your connection quality.</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                    
+                    <div class="group bg-witchly-base p-6 rounded-xl border border-gray-700 hover:border-witchly-primary/50 transition-all duration-300">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex items-center gap-4">
+                                <img src="https://flagcdn.com/w40/de.png" class="h-8 w-auto rounded shadow-lg" alt="Germany">
+                                <div>
+                                    <div class="text-white font-bold text-lg">Falkenstein</div>
+                                    <div class="text-xs text-gray-500 font-bold uppercase tracking-wider">EU Central</div>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-server text-gray-600 group-hover:text-witchly-primary transition-colors"></i>
+                        </div>
+                        
+                        <div class="flex items-end justify-between">
+                            <button onclick="simulatePing('de-ping', this)" class="ping-btn bg-gray-800 hover:bg-witchly-primary text-gray-300 hover:text-white text-xs font-bold px-4 py-2 rounded-lg border border-gray-700 hover:border-witchly-primary transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-play"></i> TEST
+                            </button>
+                            <div class="text-right">
+                                <div class="text-xs text-gray-500 uppercase font-bold mb-1">Latency</div>
+                                <div id="de-ping" class="text-gray-400 font-mono font-bold text-2xl">-- <span class="text-sm text-gray-600">ms</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group bg-witchly-base p-6 rounded-xl border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex items-center gap-4">
+                                <div class="relative">
+                                    <img src="https://flagcdn.com/w40/fi.png" class="h-8 w-auto rounded shadow-lg grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" alt="Finland">
+                                    <span class="absolute -top-2 -right-2 w-2 h-2 bg-yellow-500 rounded-full animate-pulse" title="Coming Soon"></span>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold text-lg">Helsinki</div>
+                                    <div class="text-xs text-gray-500 font-bold uppercase tracking-wider">EU North</div>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-server text-gray-600 group-hover:text-blue-500 transition-colors"></i>
+                        </div>
+                        
+                        <div class="flex items-end justify-between">
+                            <button onclick="simulatePing('fi-ping', this)" class="ping-btn bg-gray-800 hover:bg-blue-600 text-gray-300 hover:text-white text-xs font-bold px-4 py-2 rounded-lg border border-gray-700 hover:border-blue-500 transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-play"></i> TEST
+                            </button>
+                            <div class="text-right">
+                                <div class="text-xs text-gray-500 uppercase font-bold mb-1">Latency</div>
+                                <div id="fi-ping" class="text-gray-400 font-mono font-bold text-2xl">-- <span class="text-sm text-gray-600">ms</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-gray-700/50 text-center">
+                    <p class="text-xs text-gray-500 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Note: This is a browser-based HTTP estimate. Actual in-game UDP latency is usually lower.
+                    </p>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <div id="footer-placeholder"></div>
     <script src="js/main.js"></script>
 
     <script>
-        async function simulatePing(elementId) {
+        async function simulatePing(elementId, btn) {
             const el = document.getElementById(elementId);
-            el.innerText = "Pinging...";
-            el.classList.remove('text-green-400');
-            el.classList.add('text-yellow-400');
+            const originalBtnText = btn.innerHTML;
+            
+            // UI Loading State
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+            btn.classList.add('opacity-75', 'cursor-wait');
+            
+            el.innerHTML = '<span class="text-gray-500 text-lg">...</span>';
+            el.className = 'font-mono font-bold text-2xl text-gray-500';
 
             // Simulate network request time
             const start = Date.now();
             try {
-                // Fetch a tiny file from a reliable CDN close to target (simulated)
-                // In reality, browser JS can't ICMP ping. We use fetch latency as a proxy.
-                await fetch('/images/logo.png?' + Math.random()); 
-                const end = Date.now();
-                const duration = Math.floor((end - start) * 0.8); // 0.8 adjustment for HTTP overhead
-
-                el.innerText = duration + " ms";
-                el.classList.remove('text-yellow-400');
+                // Fetch a tiny file from server to estimate RTT
+                // Using no-cache to ensure a fresh request
+                await fetch('/images/logo.png?' + Math.random(), { cache: "no-store" }); 
                 
-                if(duration < 50) el.classList.add('text-green-400');
-                else if(duration < 100) el.classList.add('text-yellow-400');
-                else el.classList.add('text-red-400');
+                const end = Date.now();
+                // 0.8 adjustment factor for HTTP overhead vs raw ICMP
+                const duration = Math.floor((end - start) * 0.8); 
+
+                // Reset Button
+                btn.innerHTML = originalBtnText;
+                btn.classList.remove('opacity-75', 'cursor-wait');
+
+                // Color Coding Logic
+                let colorClass = 'text-red-400';
+                if(duration < 50) colorClass = 'text-green-400';
+                else if(duration < 100) colorClass = 'text-yellow-400';
+
+                // Display Result
+                el.className = `font-mono font-bold text-2xl ${colorClass}`;
+                el.innerHTML = `${duration} <span class="text-sm text-gray-500">ms</span>`;
 
             } catch (e) {
+                btn.innerHTML = originalBtnText;
+                btn.classList.remove('opacity-75', 'cursor-wait');
+                
+                el.className = 'font-mono font-bold text-xl text-red-500';
                 el.innerText = "Error";
+                console.error("Ping failed:", e);
             }
         }
     </script>
