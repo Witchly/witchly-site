@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium Game Hosting Pricing. Minecraft, Rust, and Palworld servers powered by i9 processors.">
+    <meta name="description" content="Premium Game Hosting Pricing. Minecraft, Hytale, Rust, and Palworld servers powered by i9 processors.">
     <meta name="theme-color" content="#6d28d9">
     
     <meta property="og:type" content="website">
@@ -112,6 +112,7 @@
                             <div class="relative">
                                 <select id="calc-game" onchange="calculatePlan()" class="w-full bg-witchly-base border border-gray-700 rounded-xl p-4 text-white appearance-none focus:border-witchly-primary focus:ring-1 focus:ring-witchly-primary outline-none transition-all cursor-pointer">
                                     <option value="minecraft">Minecraft</option>
+                                    <option value="hytale">Hytale</option>
                                     <option value="rust">Rust</option>
                                     <option value="palworld">Palworld</option>
                                 </select>
@@ -123,8 +124,8 @@
                             <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider">Server Type</label>
                             <div class="relative">
                                 <select id="calc-type" onchange="calculatePlan()" class="w-full bg-witchly-base border border-gray-700 rounded-xl p-4 text-white appearance-none focus:border-witchly-primary focus:ring-1 focus:ring-witchly-primary outline-none transition-all cursor-pointer">
-                                    <option value="vanilla">Vanilla / Paper / Plugins</option>
-                                    <option value="heavy">Heavy Modpack (ATM9, etc.)</option>
+                                    <option value="vanilla">Vanilla / Standard</option>
+                                    <option value="heavy">Heavy Modpack / Legacy</option>
                                 </select>
                                 <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></i>
                             </div>
@@ -148,10 +149,13 @@
                 </div>
             </div>
 
-            <div class="flex justify-center mb-16">
-                <div class="bg-witchly-surface p-1.5 rounded-xl inline-flex border border-gray-700/50 shadow-xl">
+            <div class="flex justify-center mb-16 overflow-x-auto">
+                <div class="bg-witchly-surface p-1.5 rounded-xl inline-flex border border-gray-700/50 shadow-xl whitespace-nowrap">
                     <button onclick="manualToggle('minecraft')" id="btn-mc" class="px-8 py-3 rounded-lg text-sm font-bold transition-all bg-witchly-primary text-white shadow-lg shadow-witchly-primary/25">
                         <i class="fa-solid fa-cube mr-2"></i> Minecraft
+                    </button>
+                    <button onclick="manualToggle('hytale')" id="btn-hytale" class="px-8 py-3 rounded-lg text-sm font-bold text-gray-400 hover:text-white transition-all hover:bg-white/5">
+                        <i class="fa-solid fa-trophy mr-2"></i> Hytale
                     </button>
                     <button onclick="manualToggle('rust')" id="btn-rust" class="px-8 py-3 rounded-lg text-sm font-bold text-gray-400 hover:text-white transition-all hover:bg-white/5">
                         <i class="fa-solid fa-radiation mr-2"></i> Rust
@@ -230,6 +234,65 @@
                         <li class="flex items-center"><i class="fa-solid fa-server text-witchly-primary mr-3 w-4"></i> 5 DBs, 5 Backups</li>
                     </ul>
                     <a href="https://billing.witchly.host/products/minecraft/the-mainframe" class="w-full py-3 text-center border border-gray-600 rounded-xl text-white font-bold hover:bg-white hover:text-witchly-base transition-all">Select Plan</a>
+                </div>
+            </div>
+
+            <div id="pricing-hytale" class="hidden grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 animate-fade-in-up">
+                
+                <div id="plan-hytale-trial" class="plan-card bg-witchly-surface/50 p-8 rounded-2xl border border-gray-700/50 transition-all flex flex-col relative group hover:bg-witchly-surface">
+                    <div class="absolute top-0 left-0 bg-yellow-400 text-black text-[10px] font-bold px-3 py-1.5 rounded-br-lg rounded-tl-xl z-10 font-mono">CODE: TESTDRIVE</div>
+                    <h3 class="text-xl font-bold text-white mt-4">Free Trial</h3>
+                    <p class="text-sm text-gray-400 mt-1 mb-6">24h Access. No Credit Card.</p>
+                    <div class="text-3xl font-mono font-bold text-white mb-6">$0.00 <span class="text-xl text-gray-500 font-normal">/ ₹0</span><span class="text-sm text-gray-500 font-normal">/6h</span></div>
+                    <ul class="space-y-4 mb-8 text-sm text-gray-400 flex-grow">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 4 GB RAM</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 100% CPU (1 Core)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 5 GB Storage</li>
+                    </ul>
+                    <a href="https://billing.witchly.host/products/free-trial/hytale-trial-24h" class="w-full py-3 text-center border border-gray-600 rounded-xl text-white font-bold hover:bg-white hover:text-witchly-base transition-all">Claim Trial</a>
+                </div>
+
+                <div id="plan-hytale-scout" class="plan-card bg-witchly-surface p-8 rounded-2xl border border-gray-700 transition-all flex flex-col relative group hover:border-cyan-400/50">
+                    <div class="rec-badge hidden absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-witchly-base text-xs font-bold px-4 py-1.5 rounded-full shadow-lg uppercase tracking-wider z-20"><i class="fa-solid fa-star mr-1"></i> Recommended</div>
+                    <h3 class="text-xl font-bold text-white">The Scout</h3>
+                    <p class="text-sm text-gray-400 mt-1 mb-6">Entry Level (Story Mode).</p>
+                    <div class="text-3xl font-mono font-bold text-white mb-6">$6.00 <span class="text-xl text-gray-500 font-normal">/ ₹499</span><span class="text-sm text-gray-500 font-normal">/mo</span></div>
+                    <ul class="space-y-4 mb-8 text-sm text-gray-300 flex-grow">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-3 w-4"></i> 4 GB RAM</li>
+                        <li class="flex items-center"><i class="fa-solid fa-microchip text-cyan-400 mr-3 w-4"></i> 200% CPU (2 Cores)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-hard-drive text-cyan-400 mr-3 w-4"></i> 30 GB NVMe Storage</li>
+                        <li class="flex items-center"><i class="fa-solid fa-user-group text-cyan-400 mr-3 w-4"></i> Perfect for 2-4 Friends</li>
+                    </ul>
+                    <a href="https://billing.witchly.host/products/hytale/the-scout" class="w-full py-3 text-center border border-gray-600 rounded-xl text-white font-bold hover:bg-white hover:text-witchly-base transition-all">Select Plan</a>
+                </div>
+
+                <div id="plan-hytale-explorer" class="plan-card bg-witchly-surface p-8 rounded-2xl border-2 border-cyan-500 relative shadow-2xl shadow-cyan-500/10 flex flex-col md:-translate-y-4">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-cyan-500 text-witchly-base px-4 py-1.5 rounded-full text-xs font-bold uppercase shadow-lg tracking-wide">Star Pick</div>
+                    <div class="rec-badge hidden absolute -top-10 left-1/2 -translate-x-1/2 bg-green-500 text-witchly-base text-xs font-bold px-4 py-1.5 rounded-full shadow-lg uppercase tracking-wider z-20"><i class="fa-solid fa-star mr-1"></i> Recommended</div>
+                    <h3 class="text-xl font-bold text-white mt-2">The Explorer</h3>
+                    <p class="text-sm text-gray-400 mt-1 mb-6">The Sweet Spot (Adventure).</p>
+                    <div class="text-4xl font-mono font-bold text-white mb-6">$14.00 <span class="text-xl text-gray-400 font-normal">/ ₹1,199</span><span class="text-sm text-gray-500 font-normal">/mo</span></div>
+                    <ul class="space-y-4 mb-8 text-sm text-white flex-grow">
+                        <li class="flex items-center"><i class="fa-solid fa-bolt text-cyan-400 mr-3 w-4"></i> <strong>8 GB RAM</strong></li>
+                        <li class="flex items-center"><i class="fa-solid fa-microchip text-cyan-400 mr-3 w-4"></i> 400% CPU (4 Cores)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-hard-drive text-cyan-400 mr-3 w-4"></i> 60 GB NVMe Storage</li>
+                        <li class="flex items-center"><i class="fa-solid fa-user-group text-cyan-400 mr-3 w-4"></i> Standard for 5-10 Players</li>
+                    </ul>
+                    <a href="https://billing.witchly.host/products/hytale/the-explorer" class="w-full py-3.5 text-center bg-cyan-600 rounded-xl text-white font-bold hover:bg-cyan-500 transition-all shadow-lg shadow-cyan-600/25">Deploy Now</a>
+                </div>
+
+                <div id="plan-hytale-creator" class="plan-card bg-witchly-surface p-8 rounded-2xl border border-gray-700 transition-all flex flex-col relative group hover:border-cyan-400/50">
+                    <div class="rec-badge hidden absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-witchly-base text-xs font-bold px-4 py-1.5 rounded-full shadow-lg uppercase tracking-wider z-20"><i class="fa-solid fa-star mr-1"></i> Recommended</div>
+                    <h3 class="text-xl font-bold text-white">The Creator</h3>
+                    <p class="text-sm text-gray-400 mt-1 mb-6">Communities & Hubs.</p>
+                    <div class="text-3xl font-mono font-bold text-white mb-6">$26.00 <span class="text-xl text-gray-500 font-normal">/ ₹2,199</span><span class="text-sm text-gray-500 font-normal">/mo</span></div>
+                    <ul class="space-y-4 mb-8 text-sm text-gray-300 flex-grow">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-3 w-4"></i> 16 GB RAM</li>
+                        <li class="flex items-center"><i class="fa-solid fa-infinity text-cyan-400 mr-3 w-4"></i> Uncapped CPU Limit</li>
+                        <li class="flex items-center"><i class="fa-solid fa-hard-drive text-cyan-400 mr-3 w-4"></i> 120 GB NVMe Storage</li>
+                        <li class="flex items-center"><i class="fa-solid fa-users text-cyan-400 mr-3 w-4"></i> Public Hubs / Factions</li>
+                    </ul>
+                    <a href="https://billing.witchly.host/products/hytale/the-creator" class="w-full py-3 text-center border border-gray-600 rounded-xl text-white font-bold hover:bg-white hover:text-witchly-base transition-all">Select Plan</a>
                 </div>
             </div>
 
@@ -326,6 +389,7 @@
         window.togglePricing = function(game) {
             // Hide all
             document.getElementById('pricing-minecraft').classList.add('hidden');
+            document.getElementById('pricing-hytale').classList.add('hidden');
             document.getElementById('pricing-rust').classList.add('hidden');
             document.getElementById('pricing-palworld').classList.add('hidden');
 
@@ -334,18 +398,19 @@
             if(target) target.classList.remove('hidden');
 
             // Reset Buttons style
-            ['btn-mc', 'btn-rust', 'btn-pal'].forEach(id => {
+            ['btn-mc', 'btn-hytale', 'btn-rust', 'btn-pal'].forEach(id => {
                 const btn = document.getElementById(id);
-                btn.className = 'px-8 py-3 rounded-lg text-sm font-bold text-gray-400 hover:text-white transition-all hover:bg-white/5';
+                if(btn) btn.className = 'px-8 py-3 rounded-lg text-sm font-bold text-gray-400 hover:text-white transition-all hover:bg-white/5';
             });
 
             // Activate Button style
             let activeBtnId = 'btn-mc';
+            if(game === 'hytale') activeBtnId = 'btn-hytale';
             if(game === 'rust') activeBtnId = 'btn-rust';
             if(game === 'palworld') activeBtnId = 'btn-pal';
             
             const activeBtn = document.getElementById(activeBtnId);
-            activeBtn.className = 'px-8 py-3 rounded-lg text-sm font-bold transition-all bg-witchly-primary text-white shadow-lg shadow-witchly-primary/25';
+            if(activeBtn) activeBtn.className = 'px-8 py-3 rounded-lg text-sm font-bold transition-all bg-witchly-primary text-white shadow-lg shadow-witchly-primary/25';
         }
 
         function manualToggle(game) {
@@ -374,7 +439,7 @@
         });
 
         function calculatePlayersFromRam(ram, game) {
-            if(game === 'minecraft') {
+            if(game === 'minecraft' || game === 'hytale') {
                 if(ram >= 16) return 40;
                 if(ram >= 8) return 20;
                 return 5;
@@ -382,7 +447,7 @@
             return 20;
         }
 
-        // --- Calculation Logic (Preserved) ---
+        // --- Calculation Logic ---
         function calculatePlan() {
             const game = document.getElementById('calc-game').value;
             const type = document.getElementById('calc-type').value;
@@ -392,7 +457,7 @@
 
             playerDisplay.innerText = players + (players === 50 ? '+' : '');
 
-            // Handle Type Visibility
+            // Handle Type Visibility (Only needed for Minecraft essentially, hidden for others)
             if (game === 'minecraft') {
                 typeContainer.classList.remove('opacity-0', 'pointer-events-none');
             } else {
@@ -412,6 +477,10 @@
                     else if (players <= 25) recId = 'plan-mc-8gb';
                     else recId = 'plan-mc-16gb';
                 }
+            } else if (game === 'hytale') {
+                if (players <= 4) recId = 'plan-hytale-scout';
+                else if (players <= 10) recId = 'plan-hytale-explorer';
+                else recId = 'plan-hytale-creator';
             } else if (game === 'rust') {
                 recId = players > 30 ? 'plan-rust-16gb' : 'plan-rust-10gb';
             } else if (game === 'palworld') {
