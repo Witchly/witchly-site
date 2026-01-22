@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Premium Game Hosting for Minecraft, Rust, and Palworld. Powered by i9 processors, NVMe SSDs, and 24/7 Support.">
-    <meta name="theme-color" content="#6d28d9">
+    <meta name="theme-color" content="#7c3aed">
+    
     <meta property="og:type" content="website">
     <meta property="og:title" content="Witchly.host | High Performance Game Hosting">
     <meta property="og:description" content="Deploy your game server in seconds. 99.9% Uptime, DDoS Protection, and Instant Setup.">
@@ -14,9 +15,11 @@
     <meta property="twitter:title" content="Witchly.host | Game Hosting">
     <meta property="twitter:description" content="Deploy your game server in seconds. Powered by i9 processors.">
     <meta property="twitter:image" content="https://witchly.host/images/logo.png">
+    
     <title>Witchly.host | Premium Game Server Hosting</title>
-    <meta name="description" content="High-performance Minecraft, Rust, and Palworld hosting powered by Intel i9 hardware in Finland & Germany.">
     <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -24,95 +27,170 @@
             theme: { 
                 extend: { 
                     fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, 
-                    colors: { witchly: { base: '#0f172a', surface: '#1e293b', primary: '#6d28d9', primaryHover: '#5b21b6', accent: '#4ade80' } }
+                    colors: { 
+                        witchly: { 
+                            base: '#0f172a',    // Slate 900
+                            surface: '#1e293b', // Slate 800
+                            card: '#334155',    // Slate 700
+                            primary: '#7c3aed', // Violet 600
+                            primaryHover: '#6d28d9', // Violet 700
+                            accent: '#4ade80'   // Green 400
+                        } 
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
                 } 
             } 
         }
     </script>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+        
+        .feature-card { transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); }
+    </style>
 </head>
-<body class="bg-witchly-base text-gray-200 font-sans antialiased">
+<body class="bg-witchly-base text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-witchly-primary selection:text-white">
     
     <div id="navbar-placeholder"></div>
 
-    <section class="relative pt-40 pb-20 lg:pt-52 lg:pb-48 overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3QgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTNSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIgeD0iMCIgeT0iMCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIi8+PC9nPjwvc3ZnPg==')] opacity-20 pointer-events-none"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-witchly-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
+    <header class="relative pt-40 pb-20 lg:pt-52 lg:pb-48 overflow-hidden bg-gradient-to-b from-witchly-surface to-witchly-base border-b border-gray-800">
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-witchly-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
-            <span class="inline-block py-1 px-3 rounded-full bg-witchly-surface border border-gray-700 text-witchly-primary text-xs font-bold tracking-widest uppercase mb-6 animate-fade-in-up">Next Gen Hosting</span>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-witchly-primary/10 border border-witchly-primary/20 text-witchly-primary text-xs font-bold tracking-widest uppercase mb-6 animate-fade-in-up">
+                <i class="fa-solid fa-bolt mr-2"></i>Next Gen Hosting
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up tracking-tight">
                 Unleash Your <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Full Potential.</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-600">Full Potential.</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-in-up">
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-in-up leading-relaxed">
                 Stop settling for lag. Host your Minecraft, Hytale, Rust, or Palworld server on 5.0GHz Intel i9 hardware hosted in Finland & Germany.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
-                <a href="pricing.html" class="bg-witchly-primary hover:bg-witchly-primaryHover text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-purple-500/30 transform hover:-translate-y-1">View Plans</a>
-                <a href="#comparison" class="bg-witchly-surface border border-gray-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition-all">Compare Us</a>
+                <a href="pricing.html" class="bg-witchly-primary hover:bg-witchly-primaryHover text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg shadow-witchly-primary/25 hover:-translate-y-1">
+                    <i class="fa-solid fa-rocket mr-2"></i> View Plans
+                </a>
+                <a href="#comparison" class="bg-witchly-surface border border-gray-700 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-witchly-base transition-all">
+                    Compare Us
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 relative z-20 -mt-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-white text-center mb-12">
+                Choose Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-600">Game</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <a href="pricing.html?game=minecraft" class="block group relative h-[400px] w-full rounded-3xl overflow-hidden border border-gray-700 shadow-2xl transition-all hover:border-witchly-primary hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-[url('images/game-minecraft.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent opacity-90"></div>
+                    
+                    <div class="absolute bottom-0 left-0 w-full p-8">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-cube text-green-400 text-2xl drop-shadow-md"></i>
+                            <h3 class="text-2xl font-bold text-white tracking-tight">Minecraft</h3>
+                        </div>
+                        <p class="text-gray-300 text-sm font-medium leading-relaxed mb-6 opacity-90">
+                            Java, Bedrock, and Modpacks supported with 1-click installs.
+                        </p>
+                        <div class="flex items-center text-witchly-primary font-bold text-sm tracking-wide uppercase group-hover:text-white transition-colors">
+                            View Plans <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="pricing.html?game=hytale" class="block group relative h-[400px] w-full rounded-3xl overflow-hidden border border-gray-700 shadow-2xl transition-all hover:border-cyan-500 hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-[url('images/game-hytale.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent opacity-90"></div>
+                    
+                    <div class="absolute bottom-0 left-0 w-full p-8">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-trophy text-cyan-400 text-2xl drop-shadow-md"></i>
+                            <h3 class="text-2xl font-bold text-white tracking-tight">Hytale</h3>
+                        </div>
+                        <p class="text-gray-300 text-sm font-medium leading-relaxed mb-6 opacity-90">
+                            Be ready for launch. Pre-configure your Hytale server today.
+                        </p>
+                        <div class="flex items-center text-cyan-400 font-bold text-sm tracking-wide uppercase group-hover:text-white transition-colors">
+                            View Plans <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="pricing.html?game=rust" class="block group relative h-[400px] w-full rounded-3xl overflow-hidden border border-gray-700 shadow-2xl transition-all hover:border-orange-500 hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-[url('images/game-rust.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent opacity-90"></div>
+                    
+                    <div class="absolute bottom-0 left-0 w-full p-8">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-radiation text-orange-400 text-2xl drop-shadow-md"></i>
+                            <h3 class="text-2xl font-bold text-white tracking-tight">Rust</h3>
+                        </div>
+                        <p class="text-gray-300 text-sm font-medium leading-relaxed mb-6 opacity-90">
+                            High-performance PVP servers with zero lag during wipes.
+                        </p>
+                        <div class="flex items-center text-orange-400 font-bold text-sm tracking-wide uppercase group-hover:text-white transition-colors">
+                            View Plans <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="pricing.html?game=palworld" class="block group relative h-[400px] w-full rounded-3xl overflow-hidden border border-gray-700 shadow-2xl transition-all hover:border-blue-500 hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-[url('images/game-palworld.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent opacity-90"></div>
+                    
+                    <div class="absolute bottom-0 left-0 w-full p-8">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-dragon text-blue-400 text-2xl drop-shadow-md"></i>
+                            <h3 class="text-2xl font-bold text-white tracking-tight">Palworld</h3>
+                        </div>
+                        <p class="text-gray-300 text-sm font-medium leading-relaxed mb-6 opacity-90">
+                            Host your own dedicated world for you and your friends.
+                        </p>
+                        <div class="flex items-center text-blue-400 font-bold text-sm tracking-wide uppercase group-hover:text-white transition-colors">
+                            View Plans <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
 
-    <section class="py-20 max-w-7xl mx-auto px-4 -mt-20 relative z-20">
-        <h2 class="text-3xl font-bold text-white text-center mb-12">Choose Your <span class="text-witchly-primary">Game</span></h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <a href="pricing.html?game=minecraft" class="group relative h-96 rounded-2xl overflow-hidden border border-gray-700 hover:border-witchly-primary transition-all shadow-xl">
-                <div class="absolute inset-0 bg-[url('images/game-minecraft.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-80 transition-opacity"></div>
-                <div class="absolute bottom-0 left-0 p-8 w-full">
-                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-cube text-green-400 text-2xl drop-shadow-lg"></i><h3 class="text-2xl font-bold text-white drop-shadow-lg">Minecraft</h3></div>
-                    <p class="text-gray-200 text-sm mb-4 font-medium drop-shadow">Java, Bedrock, and Modpacks supported.</p>
-                    <span class="text-witchly-primary font-bold text-sm group-hover:translate-x-2 transition-transform inline-block drop-shadow">View Plans &rarr;</span>
-                </div>
-            </a>
-            <a href="pricing.html?game=hytale" class="group relative h-96 rounded-2xl overflow-hidden border border-gray-700 hover:border-witchly-primary transition-all shadow-xl">
-                <div class="absolute inset-0 bg-[url('images/game-hytale.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-80 transition-opacity"></div>
-                <div class="absolute bottom-0 left-0 p-8 w-full">
-                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-trophy text-cyan-400 text-2xl drop-shadow-lg"></i><h3 class="text-2xl font-bold text-white drop-shadow-lg">Hytale</h3></div>
-                    <p class="text-gray-200 text-sm mb-4 font-medium drop-shadow">Early access for Hytale server hosting!</p>
-                    <span class="text-witchly-primary font-bold text-sm group-hover:translate-x-2 transition-transform inline-block drop-shadow">View Plans &rarr;</span>
-                </div>
-            </a>
-            <a href="pricing.html?game=rust" class="group relative h-96 rounded-2xl overflow-hidden border border-gray-700 hover:border-orange-500 transition-all shadow-xl">
-                <div class="absolute inset-0 bg-[url('images/game-rust.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-80 transition-opacity"></div>
-                <div class="absolute bottom-0 left-0 p-8 w-full">
-                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-radiation text-orange-400 text-2xl drop-shadow-lg"></i><h3 class="text-2xl font-bold text-white drop-shadow-lg">Rust</h3></div>
-                    <p class="text-gray-200 text-sm mb-4 font-medium drop-shadow">Lag-free PVP experience.</p>
-                    <span class="text-orange-400 font-bold text-sm group-hover:translate-x-2 transition-transform inline-block drop-shadow">View Plans &rarr;</span>
-                </div>
-            </a>
-            <a href="pricing.html?game=palworld" class="group relative h-96 rounded-2xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all shadow-xl">
-                <div class="absolute inset-0 bg-[url('images/game-palworld.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-80 transition-opacity"></div>
-                <div class="absolute bottom-0 left-0 p-8 w-full">
-                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-dragon text-blue-400 text-2xl drop-shadow-lg"></i><h3 class="text-2xl font-bold text-white drop-shadow-lg">Palworld</h3></div>
-                    <p class="text-gray-200 text-sm mb-4 font-medium drop-shadow">Host your own world with friends.</p>
-                    <span class="text-blue-400 font-bold text-sm group-hover:translate-x-2 transition-transform inline-block drop-shadow">View Plans &rarr;</span>
-                </div>
-            </a>
-        </div>
-    </section>
-
     <section class="py-24 bg-witchly-surface border-y border-gray-800 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-16">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
             <div class="flex-1 z-10">
-                <span class="text-witchly-primary font-bold tracking-widest uppercase text-sm mb-2 block">Powerful Control</span>
+                <span class="text-witchly-primary font-bold tracking-widest uppercase text-xs mb-2 block">Powerful Control</span>
                 <h2 class="text-4xl font-bold text-white mb-6">Managing your server has never been <span class="text-witchly-primary">easier</span>.</h2>
                 <p class="text-gray-400 text-lg mb-8 leading-relaxed">
                     We use a heavily customized version of the industry-standard Pterodactyl panel. Install modpacks, manage files, and switch versions with a single click.
                 </p>
                 <ul class="space-y-4">
-                    <li class="flex items-center text-gray-300"><i class="fa-solid fa-check-circle text-green-400 mr-3 text-xl"></i> One-Click Modpack Installer</li>
-                    <li class="flex items-center text-gray-300"><i class="fa-solid fa-check-circle text-green-400 mr-3 text-xl"></i> Real-time Console Access</li>
-                    <li class="flex items-center text-gray-300"><i class="fa-solid fa-check-circle text-green-400 mr-3 text-xl"></i> Automated Scheduled Tasks</li>
+                    <li class="flex items-center text-gray-300 bg-witchly-base/50 p-3 rounded-xl border border-gray-700/50"><i class="fa-solid fa-bolt text-green-400 mr-4 text-lg"></i> One-Click Plugin and Modpack Installer</li>
+                    <li class="flex items-center text-gray-300 bg-witchly-base/50 p-3 rounded-xl border border-gray-700/50"><i class="fa-solid fa-terminal text-green-400 mr-4 text-lg"></i> Real-time Console Access</li>
+                    <li class="flex items-center text-gray-300 bg-witchly-base/50 p-3 rounded-xl border border-gray-700/50"><i class="fa-solid fa-clock text-green-400 mr-4 text-lg"></i> Automated Scheduled Tasks</li>
                 </ul>
             </div>
             <div class="flex-1 relative">
-                <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 blur-[80px] opacity-30 rounded-full"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 blur-[80px] opacity-20 rounded-full"></div>
                 <div class="relative bg-[#1a1b26] border border-gray-700 rounded-xl shadow-2xl overflow-hidden transform md:rotate-3 hover:rotate-0 transition-transform duration-500">
                     <div class="bg-[#16161e] px-4 py-3 border-b border-gray-700 flex items-center gap-2">
                         <div class="w-3 h-3 rounded-full bg-red-500"></div>
@@ -127,53 +205,65 @@
     </section>
 
     <section class="py-24 bg-witchly-base">
-        <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-white mb-4">Everything Included. <span class="text-gray-500">No Hidden Fees.</span></h2>
                 <p class="text-gray-400">Premium features that actually matter, included in every plan.</p>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-witchly-surface p-6 rounded-lg border border-gray-800 flex items-start gap-4 hover:border-witchly-primary transition-colors">
-                    <i class="fa-solid fa-bolt text-2xl text-witchly-primary mt-1"></i>
+                <div class="feature-card bg-witchly-surface p-8 rounded-2xl border border-gray-700/50 flex items-start gap-4 hover:border-witchly-primary/50 transition-colors group">
+                    <div class="flex-shrink-0 w-12 h-12 bg-witchly-primary/10 rounded-xl flex items-center justify-center text-witchly-primary border border-witchly-primary/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bolt text-xl"></i>
+                    </div>
                     <div>
-                        <h4 class="text-white font-bold">1-Click Modpacks</h4>
-                        <p class="text-sm text-gray-400">Install ATM9, Better Minecraft, and more with a single click.</p>
+                        <h4 class="text-white font-bold text-lg mb-1">1-Click Modpacks</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Install ATM9, Better Minecraft, and more with a single click.</p>
                     </div>
                 </div>
-                <div class="bg-witchly-surface p-6 rounded-lg border border-gray-800 flex items-start gap-4 hover:border-witchly-primary transition-colors">
-                    <i class="fa-solid fa-database text-2xl text-witchly-primary mt-1"></i>
+                <div class="feature-card bg-witchly-surface p-8 rounded-2xl border border-gray-700/50 flex items-start gap-4 hover:border-blue-500/50 transition-colors group">
+                     <div class="flex-shrink-0 w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 border border-blue-500/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-database text-xl"></i>
+                    </div>
                     <div>
-                        <h4 class="text-white font-bold">MySQL Databases</h4>
-                        <p class="text-sm text-gray-400">Plan-based high-speed NVMe databases for your plugins.</p>
+                        <h4 class="text-white font-bold text-lg mb-1">MySQL Databases</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Plan-based high-speed NVMe databases for your plugins.</p>
                     </div>
                 </div>
-                <div class="bg-witchly-surface p-6 rounded-lg border border-gray-800 flex items-start gap-4 hover:border-witchly-primary transition-colors">
-                    <i class="fa-solid fa-floppy-disk text-2xl text-witchly-primary mt-1"></i>
+                <div class="feature-card bg-witchly-surface p-8 rounded-2xl border border-gray-700/50 flex items-start gap-4 hover:border-green-500/50 transition-colors group">
+                    <div class="flex-shrink-0 w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center text-green-400 border border-green-500/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-floppy-disk text-xl"></i>
+                    </div>
                     <div>
-                        <h4 class="text-white font-bold">Panel Backups</h4>
-                        <p class="text-sm text-gray-400">Integrated backup slots in the panel to keep your progress safe.</p>
+                        <h4 class="text-white font-bold text-lg mb-1">Panel Backups</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Integrated backup slots in the panel to keep your progress safe.</p>
                     </div>
                 </div>
-                <div class="bg-witchly-surface p-6 rounded-lg border border-gray-800 flex items-start gap-4 hover:border-witchly-primary transition-colors">
-                    <i class="fa-solid fa-chart-line text-2xl text-witchly-primary mt-1"></i>
+                <div class="feature-card bg-witchly-surface p-8 rounded-2xl border border-gray-700/50 flex items-start gap-4 hover:border-purple-500/50 transition-colors group">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 border border-purple-500/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chart-line text-xl"></i>
+                    </div>
                     <div>
-                        <h4 class="text-white font-bold">99.9% Uptime</h4>
-                        <p class="text-sm text-gray-400">Guaranteed stability so your server stays online 24/7.</p>
+                        <h4 class="text-white font-bold text-lg mb-1">99.9% Uptime</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Guaranteed stability so your server stays online 24/7.</p>
                     </div>
                 </div>
-                <div class="bg-witchly-surface p-6 rounded-lg border border-gray-800 flex items-start gap-4 hover:border-witchly-primary transition-colors">
-                    <i class="fa-solid fa-sliders text-2xl text-witchly-primary mt-1"></i>
+                <div class="feature-card bg-witchly-surface p-8 rounded-2xl border border-gray-700/50 flex items-start gap-4 hover:border-yellow-500/50 transition-colors group">
+                    <div class="flex-shrink-0 w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center text-yellow-400 border border-yellow-500/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-sliders text-xl"></i>
+                    </div>
                     <div>
-                        <h4 class="text-white font-bold">Full Control</h4>
-                        <p class="text-sm text-gray-400">Total SFTP access and full control over your server files.</p>
+                        <h4 class="text-white font-bold text-lg mb-1">Full Control</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Total SFTP access and full control over your server files.</p>
                     </div>
                 </div>
-                <div class="bg-witchly-surface p-6 rounded-lg border border-gray-800 flex items-start gap-4 hover:border-witchly-primary transition-colors">
-                    <i class="fa-solid fa-shield-halved text-2xl text-witchly-primary mt-1"></i>
+                <div class="feature-card bg-witchly-surface p-8 rounded-2xl border border-gray-700/50 flex items-start gap-4 hover:border-red-500/50 transition-colors group">
+                    <div class="flex-shrink-0 w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center text-red-400 border border-red-500/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                    </div>
                     <div>
-                        <h4 class="text-white font-bold">Standard DDoS Protection</h4>
-                        <p class="text-sm text-gray-400">Included protection to help keep your server online.</p>
+                        <h4 class="text-white font-bold text-lg mb-1">DDoS Protection</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Included protection to help keep your server online.</p>
                     </div>
                 </div>
             </div>
@@ -181,86 +271,86 @@
     </section>
 
     <section id="comparison" class="py-24 bg-witchly-surface border-y border-gray-800">
-        <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-white mb-4">Witchly vs. <span class="text-gray-500">The Rest</span></h2>
                 <p class="text-gray-400">See how we stack up against the competition.</p>
             </div>
 
-            <div class="overflow-x-auto">
+            <div class="overflow-x-auto bg-witchly-base rounded-2xl border border-gray-700/50 shadow-2xl">
                 <table class="w-full text-left border-collapse min-w-[900px]">
                     <thead>
                         <tr class="border-b border-gray-700">
-                            <th class="py-4 px-6 text-gray-400 font-normal uppercase text-sm w-1/5">Feature</th>
-                            <th class="py-4 px-6 bg-witchly-primary/10 text-white font-bold text-lg border-t-4 border-witchly-primary w-1/5">Witchly</th>
-                            <th class="py-4 px-6 text-gray-400 font-bold w-1/5">Aternos</th>
-                            <th class="py-4 px-6 text-gray-400 font-bold w-1/5">Minehut</th>
-                            <th class="py-4 px-6 text-gray-400 font-bold w-1/5">Shockbyte</th>
+                            <th class="py-6 px-8 text-gray-400 font-bold uppercase text-xs tracking-wider w-1/5">Feature</th>
+                            <th class="py-6 px-8 bg-witchly-primary/10 text-white font-bold text-lg border-t-4 border-witchly-primary w-1/5">Witchly</th>
+                            <th class="py-6 px-8 text-gray-400 font-bold w-1/5">Aternos</th>
+                            <th class="py-6 px-8 text-gray-400 font-bold w-1/5">Minehut</th>
+                            <th class="py-6 px-8 text-gray-400 font-bold w-1/5">Shockbyte</th>
                         </tr>
                     </thead>
-                    <tbody class="text-sm">
+                    <tbody class="text-sm font-medium">
                         <tr class="border-b border-gray-700/50 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-6 text-gray-300 font-bold">Processor</td>
-                            <td class="py-4 px-6 bg-witchly-primary/5 text-green-400 font-bold">i9-9900K (5.0GHz)</td>
-                            <td class="py-4 px-6 text-red-400">Shared / Slow</td>
-                            <td class="py-4 px-6 text-red-400">Shared / Slow</td>
-                            <td class="py-4 px-6 text-yellow-400">Xeon / Mixed</td>
+                            <td class="py-4 px-8 text-gray-300">Processor</td>
+                            <td class="py-4 px-8 bg-witchly-primary/5 text-green-400 font-bold font-mono">i9-9900K (5.0GHz)</td>
+                            <td class="py-4 px-8 text-red-400">Shared / Slow</td>
+                            <td class="py-4 px-8 text-red-400">Shared / Slow</td>
+                            <td class="py-4 px-8 text-yellow-400">Xeon / Mixed</td>
                         </tr>
                         <tr class="border-b border-gray-700/50 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-6 text-gray-300 font-bold">Modpacks</td>
-                            <td class="py-4 px-6 bg-witchly-primary/5 text-green-400 font-bold"><i class="fa-solid fa-bolt mr-2"></i>1-Click Installer</td>
-                            <td class="py-4 px-6 text-gray-500">Limited Selection</td>
-                            <td class="py-4 px-6 text-red-400">Manual Only</td>
-                            <td class="py-4 px-6 text-yellow-400">Manual / Paid</td>
+                            <td class="py-4 px-8 text-gray-300">Modpacks</td>
+                            <td class="py-4 px-8 bg-witchly-primary/5 text-green-400 font-bold"><i class="fa-solid fa-bolt mr-2"></i>1-Click Installer</td>
+                            <td class="py-4 px-8 text-gray-500">Limited Selection</td>
+                            <td class="py-4 px-8 text-red-400">Manual Only</td>
+                            <td class="py-4 px-8 text-yellow-400">Manual / Paid</td>
                         </tr>
                         <tr class="border-b border-gray-700/50 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-6 text-gray-300 font-bold">RAM Type</td>
-                            <td class="py-4 px-6 bg-witchly-primary/5 text-white font-bold">DDR4 Dedicated</td>
-                            <td class="py-4 px-6 text-gray-500">Shared (Laggy)</td>
-                            <td class="py-4 px-6 text-gray-500">Shared (Laggy)</td>
-                            <td class="py-4 px-6 text-gray-500">DDR4</td>
+                            <td class="py-4 px-8 text-gray-300">RAM Type</td>
+                            <td class="py-4 px-8 bg-witchly-primary/5 text-white font-bold">DDR4 Dedicated</td>
+                            <td class="py-4 px-8 text-gray-500">Shared (Laggy)</td>
+                            <td class="py-4 px-8 text-gray-500">Shared (Laggy)</td>
+                            <td class="py-4 px-8 text-gray-500">DDR4</td>
                         </tr>
                         <tr class="border-b border-gray-700/50 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-6 text-gray-300 font-bold">Server Queue</td>
-                            <td class="py-4 px-6 bg-witchly-primary/5 text-white font-bold">None (Instant)</td>
-                            <td class="py-4 px-6 text-red-400">Yes (10-60m wait)</td>
-                            <td class="py-4 px-6 text-yellow-400">Yes (Peak Times)</td>
-                            <td class="py-4 px-6 text-white">None</td>
+                            <td class="py-4 px-8 text-gray-300">Server Queue</td>
+                            <td class="py-4 px-8 bg-witchly-primary/5 text-white font-bold">None (Instant)</td>
+                            <td class="py-4 px-8 text-red-400">Yes (10-60m wait)</td>
+                            <td class="py-4 px-8 text-yellow-400">Yes (Peak Times)</td>
+                            <td class="py-4 px-8 text-white">None</td>
                         </tr>
                         <tr class="border-b border-gray-700/50 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-6 text-gray-300 font-bold">Control Panel</td>
-                            <td class="py-4 px-6 bg-witchly-primary/5 text-white font-bold">Premium Pterodactyl</td>
-                            <td class="py-4 px-6 text-gray-500">Custom (Limited)</td>
-                            <td class="py-4 px-6 text-gray-500">Custom (Ads)</td>
-                            <td class="py-4 px-6 text-gray-500">Multicraft</td>
+                            <td class="py-4 px-8 text-gray-300">Control Panel</td>
+                            <td class="py-4 px-8 bg-witchly-primary/5 text-white font-bold">Premium Pterodactyl</td>
+                            <td class="py-4 px-8 text-gray-500">Custom (Limited)</td>
+                            <td class="py-4 px-8 text-gray-500">Custom (Ads)</td>
+                            <td class="py-4 px-8 text-gray-500">Multicraft</td>
                         </tr>
                         <tr class="border-b border-gray-700/50 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-6 text-gray-300 font-bold">Backups</td>
-                            <td class="py-4 px-6 bg-witchly-primary/5 text-white font-bold">Panel Slots Included</td>
-                            <td class="py-4 px-6 text-gray-500">G-Drive Only</td>
-                            <td class="py-4 px-6 text-gray-500">Manual DL</td>
-                            <td class="py-4 px-6 text-gray-500">Paid Addon</td>
+                            <td class="py-4 px-8 text-gray-300">Backups</td>
+                            <td class="py-4 px-8 bg-witchly-primary/5 text-white font-bold">Panel Slots Included</td>
+                            <td class="py-4 px-8 text-gray-500">G-Drive Only</td>
+                            <td class="py-4 px-8 text-gray-500">Manual DL</td>
+                            <td class="py-4 px-8 text-gray-500">Paid Addon</td>
                         </tr>
                         <tr class="border-b border-gray-700/50 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-6 text-gray-300 font-bold">Support</td>
-                            <td class="py-4 px-6 bg-witchly-primary/5 text-white font-bold">Discord AI + Human</td>
-                            <td class="py-4 px-6 text-gray-500">Forums Only</td>
-                            <td class="py-4 px-6 text-gray-500">Community Only</td>
-                            <td class="py-4 px-6 text-gray-500">Ticket (Slow)</td>
+                            <td class="py-4 px-8 text-gray-300">Support</td>
+                            <td class="py-4 px-8 bg-witchly-primary/5 text-white font-bold">Discord AI + Human</td>
+                            <td class="py-4 px-8 text-gray-500">Forums Only</td>
+                            <td class="py-4 px-8 text-gray-500">Community Only</td>
+                            <td class="py-4 px-8 text-gray-500">Ticket (Slow)</td>
+                        </tr>
+                         <tr class="border-b border-gray-700/50 hover:bg-white/5 transition-colors">
+                            <td class="py-4 px-8 text-gray-300">Locations</td>
+                            <td class="py-4 px-8 bg-witchly-primary/5 text-white font-bold">Finland & Germany</td>
+                            <td class="py-4 px-8 text-gray-500">Germany Only</td>
+                            <td class="py-4 px-8 text-gray-500">US Only</td>
+                            <td class="py-4 px-8 text-gray-500">Global ($$$)</td>
                         </tr>
                         <tr class="border-b border-gray-700/50 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-6 text-gray-300 font-bold">Locations</td>
-                            <td class="py-4 px-6 bg-witchly-primary/5 text-white font-bold">Finland & Germany</td>
-                            <td class="py-4 px-6 text-gray-500">Germany Only</td>
-                            <td class="py-4 px-6 text-gray-500">US Only</td>
-                            <td class="py-4 px-6 text-gray-500">Global ($$$)</td>
-                        </tr>
-                        <tr class="border-b border-gray-700/50 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-6 text-gray-300 font-bold">24/7 Uptime</td>
-                            <td class="py-4 px-6 bg-witchly-primary/5 text-green-400 font-bold"><i class="fa-solid fa-check"></i> 99.9% Guaranteed</td>
-                            <td class="py-4 px-6 text-red-400"><i class="fa-solid fa-xmark"></i> No (Shutdowns)</td>
-                            <td class="py-4 px-6 text-red-400"><i class="fa-solid fa-xmark"></i> No (Shutdowns)</td>
-                            <td class="py-4 px-6 text-white"><i class="fa-solid fa-check"></i> Yes</td>
+                            <td class="py-4 px-8 text-gray-300">24/7 Uptime</td>
+                            <td class="py-4 px-8 bg-witchly-primary/5 text-green-400 font-bold"><i class="fa-solid fa-check"></i> 99.9% Guaranteed</td>
+                            <td class="py-4 px-8 text-red-400"><i class="fa-solid fa-xmark"></i> No (Shutdowns)</td>
+                            <td class="py-4 px-8 text-red-400"><i class="fa-solid fa-xmark"></i> No (Shutdowns)</td>
+                            <td class="py-4 px-8 text-white"><i class="fa-solid fa-check"></i> Yes</td>
                         </tr>
                     </tbody>
                 </table>
@@ -269,8 +359,8 @@
     </section>
 
     <section class="py-24 bg-black/30 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-white mb-4">What Our Customers <span class="text-witchly-primary">Say</span></h2>
                 <div class="flex items-center justify-center gap-2 text-[#00b67a] mb-4">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -279,47 +369,60 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-witchly-surface p-8 rounded-2xl border border-gray-700 relative">
-                    <i class="fa-solid fa-quote-left text-4xl text-gray-700 absolute top-6 left-6 opacity-50"></i>
+                <div class="bg-witchly-surface p-8 rounded-2xl border border-gray-700/50 hover:border-witchly-primary/50 transition-colors relative feature-card">
+                    <i class="fa-solid fa-quote-left text-4xl text-gray-700 absolute top-6 left-6 opacity-30"></i>
                     <div class="flex text-[#00b67a] mb-4 relative z-10"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-gray-300 italic mb-6 relative z-10">"Switched from a budget host and the difference is night and day. My ATM9 server actually runs smoothly now. The AI bot on Discord solved my issue in seconds."</p>
-                    <div class="flex items-center gap-4"><div class="h-10 w-10 bg-purple-900/50 rounded-full flex items-center justify-center text-purple-300 font-bold">M</div><div><h4 class="text-white font-bold text-sm">Mike D.</h4><p class="text-gray-500 text-xs flex items-center"><i class="fa-brands fa-trustpilot mr-1 text-[#00b67a]"></i> Verified Customer</p></div></div>
+                    <p class="text-gray-300 italic mb-6 relative z-10 text-sm leading-relaxed">"Switched from a budget host and the difference is night and day. My ATM9 server actually runs smoothly now. The AI bot on Discord solved my issue in seconds."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-10 bg-purple-900/50 rounded-full flex items-center justify-center text-purple-300 font-bold border border-purple-500/30">M</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Mike D.</h4>
+                            <p class="text-gray-500 text-xs flex items-center"><i class="fa-brands fa-trustpilot mr-1 text-[#00b67a]"></i> Verified</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-witchly-surface p-8 rounded-2xl border border-gray-700 relative">
-                    <i class="fa-solid fa-quote-left text-4xl text-gray-700 absolute top-6 left-6 opacity-50"></i>
+                <div class="bg-witchly-surface p-8 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-colors relative feature-card">
+                    <i class="fa-solid fa-quote-left text-4xl text-gray-700 absolute top-6 left-6 opacity-30"></i>
                     <div class="flex text-[#00b67a] mb-4 relative z-10"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-gray-300 italic mb-6 relative z-10">"Best Rust hosting I've used. The Germany node has amazing ping for my EU players. Zero lag during wipes."</p>
-                    <div class="flex items-center gap-4"><div class="h-10 w-10 bg-blue-900/50 rounded-full flex items-center justify-center text-blue-300 font-bold">S</div><div><h4 class="text-white font-bold text-sm">Sarah K.</h4><p class="text-gray-500 text-xs flex items-center"><i class="fa-brands fa-trustpilot mr-1 text-[#00b67a]"></i> Verified Customer</p></div></div>
+                    <p class="text-gray-300 italic mb-6 relative z-10 text-sm leading-relaxed">"Best Rust hosting I've used. The Germany node has amazing ping for my EU players. Zero lag during wipes."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-10 bg-blue-900/50 rounded-full flex items-center justify-center text-blue-300 font-bold border border-blue-500/30">S</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Sarah K.</h4>
+                            <p class="text-gray-500 text-xs flex items-center"><i class="fa-brands fa-trustpilot mr-1 text-[#00b67a]"></i> Verified</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-witchly-surface p-8 rounded-2xl border border-gray-700 relative">
-                    <i class="fa-solid fa-quote-left text-4xl text-gray-700 absolute top-6 left-6 opacity-50"></i>
+                <div class="bg-witchly-surface p-8 rounded-2xl border border-gray-700/50 hover:border-green-500/50 transition-colors relative feature-card">
+                    <i class="fa-solid fa-quote-left text-4xl text-gray-700 absolute top-6 left-6 opacity-30"></i>
                     <div class="flex text-[#00b67a] mb-4 relative z-10"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-gray-300 italic mb-6 relative z-10">"Setup was instant for my Palworld server. Had a small config issue and the staff fixed it manually within minutes. Highly recommend!"</p>
-                    <div class="flex items-center gap-4"><div class="h-10 w-10 bg-green-900/50 rounded-full flex items-center justify-center text-green-300 font-bold">A</div><div><h4 class="text-white font-bold text-sm">Alex R.</h4><p class="text-gray-500 text-xs flex items-center"><i class="fa-brands fa-trustpilot mr-1 text-[#00b67a]"></i> Verified Customer</p></div></div>
+                    <p class="text-gray-300 italic mb-6 relative z-10 text-sm leading-relaxed">"Setup was instant for my Palworld server. Had a small config issue and the staff fixed it manually within minutes. Highly recommend!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-10 bg-green-900/50 rounded-full flex items-center justify-center text-green-300 font-bold border border-green-500/30">A</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Alex R.</h4>
+                            <p class="text-gray-500 text-xs flex items-center"><i class="fa-brands fa-trustpilot mr-1 text-[#00b67a]"></i> Verified</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="text-center mt-10">
-                <a href="https://www.trustpilot.com/review/witchly.host" target="_blank" class="text-gray-400 hover:text-white underline text-sm">See all reviews on Trustpilot &rarr;</a>
+            <div class="text-center mt-12">
+                <a href="https://www.trustpilot.com/review/witchly.host" target="_blank" class="text-gray-400 hover:text-white underline text-sm transition-colors">See all reviews on Trustpilot &rarr;</a>
             </div>
-        </div>
-    </section>
-
-    <section id="features" class="py-24 max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="flex gap-4"><div class="flex-shrink-0 w-12 h-12 bg-purple-900/50 rounded-lg flex items-center justify-center text-purple-400"><i class="fa-solid fa-microchip"></i></div><div><h4 class="text-white font-bold text-lg mb-1">Intel Power</h4><p class="text-gray-400 text-sm">We use Intel i9-9900K processors @ 5.0GHz for maximum single-core performance.</p></div></div>
-            <div class="flex gap-4"><div class="flex-shrink-0 w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center text-blue-400"><i class="fa-solid fa-shield-halved"></i></div><div><h4 class="text-white font-bold text-lg mb-1">Standard Protection</h4><p class="text-gray-400 text-sm">Basic protection included to keep your server online.</p></div></div>
-            <div class="flex gap-4"><div class="flex-shrink-0 w-12 h-12 bg-green-900/50 rounded-lg flex items-center justify-center text-green-400"><i class="fa-solid fa-gauge-high"></i></div><div><h4 class="text-white font-bold text-lg mb-1">NVMe RAID</h4><p class="text-gray-400 text-sm">RAID 1 SSD Storage ensures your data is safe and loads instantly.</p></div></div>
-            <div class="flex gap-4"><div class="flex-shrink-0 w-12 h-12 bg-red-900/50 rounded-lg flex items-center justify-center text-red-400"><i class="fa-solid fa-globe"></i></div><div><h4 class="text-white font-bold text-lg mb-1">EU Datacenters</h4><p class="text-gray-400 text-sm">Premium connectivity in <strong>Finland</strong> and <strong>Germany</strong>.</p></div></div>
-            <div class="flex gap-4"><div class="flex-shrink-0 w-12 h-12 bg-yellow-900/50 rounded-lg flex items-center justify-center text-yellow-400"><i class="fa-solid fa-clock"></i></div><div><h4 class="text-white font-bold text-lg mb-1">Instant Setup</h4><p class="text-gray-400 text-sm">Our automated system deploys your server within 60 seconds of payment.</p></div></div>
-            <div class="flex gap-4"><div class="flex-shrink-0 w-12 h-12 bg-pink-900/50 rounded-lg flex items-center justify-center text-pink-400"><i class="fa-solid fa-headset"></i></div><div><h4 class="text-white font-bold text-lg mb-1">Hybrid Support</h4><p class="text-gray-400 text-sm">Instant answers from our Discord AI, plus real human staff for complex issues.</p></div></div>
         </div>
     </section>
 
     <section class="py-24 bg-witchly-surface border-t border-gray-800">
-        <div class="max-w-4xl mx-auto px-4">
+        <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-white text-center mb-12">Common <span class="text-witchly-primary">Questions</span></h2>
-            <div id="home-faq-container" class="space-y-4"><p class="text-center text-gray-500">Loading questions...</p></div>
-            <div class="text-center mt-12"><a href="https://docs.witchly.host" target="_blank" class="inline-block border border-gray-600 text-gray-300 hover:text-white hover:border-white px-6 py-2 rounded-full text-sm font-bold transition-all">View Knowledgebase</a></div>
+            <div id="home-faq-container" class="space-y-4">
+                <p class="text-center text-gray-500">Loading questions...</p>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://docs.witchly.host" target="_blank" class="inline-block border border-gray-600 text-gray-300 hover:text-white hover:border-white px-8 py-3 rounded-full text-sm font-bold transition-all">
+                    View Knowledgebase
+                </a>
+            </div>
         </div>
     </section>
 
@@ -336,12 +439,12 @@
                     const questions = window.faqDatabase.filter(q => q.game === 'getting-started').slice(0, 5);
                     if(questions.length > 0) {
                         container.innerHTML = questions.map((q, index) => `
-                            <details id="${q.id}" class="group bg-witchly-base rounded-lg border border-gray-700 overflow-hidden">
-                                <summary class="flex justify-between items-center p-6 cursor-pointer text-white font-sans font-bold list-none hover:bg-gray-800 transition-colors">
+                            <details id="${q.id}" class="group bg-witchly-base rounded-2xl border border-gray-700/50 overflow-hidden shadow-lg">
+                                <summary class="flex justify-between items-center p-6 cursor-pointer text-white font-sans font-bold list-none hover:bg-white/5 transition-colors">
                                     <span>${q.title}</span>
-                                    <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-400"></i></span>
+                                    <span class="transition-transform duration-300 group-open:rotate-180 bg-gray-800 w-8 h-8 flex items-center justify-center rounded-full"><i class="fa-solid fa-chevron-down text-gray-400 text-xs"></i></span>
                                 </summary>
-                                <div class="text-gray-400 p-6 pt-0 text-sm leading-relaxed border-t border-gray-800/0 group-open:border-gray-700">
+                                <div class="text-gray-400 p-6 pt-0 text-sm leading-relaxed border-t border-gray-800/0 group-open:border-gray-800 transition-all">
                                     ${q.answer}
                                 </div>
                             </details>
