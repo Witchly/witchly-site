@@ -443,49 +443,9 @@ Very underrated hosting for sure."</p>
         </div>
     </section>
 
-    <section class="py-24 bg-witchly-surface border-t border-gray-800">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white text-center mb-12">Common <span class="text-witchly-primary">Questions</span></h2>
-            <div id="home-faq-container" class="space-y-4">
-                <p class="text-center text-gray-500">Loading questions...</p>
-            </div>
-            <div class="text-center mt-12">
-                <a href="https://docs.witchly.host" target="_blank" class="inline-block border border-gray-600 text-gray-300 hover:text-white hover:border-white px-8 py-3 rounded-full text-sm font-bold transition-all">
-                    View Knowledgebase
-                </a>
-            </div>
-        </div>
-    </section>
-
     <div id="footer-placeholder"></div>
 
-    <script src="js/faq_db.js"></script>
     <script src="js/main.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const container = document.getElementById('home-faq-container');
-            setTimeout(() => {
-                if (typeof window.faqDatabase !== 'undefined') {
-                    const questions = window.faqDatabase.filter(q => q.game === 'getting-started').slice(0, 5);
-                    if(questions.length > 0) {
-                        container.innerHTML = questions.map((q, index) => `
-                            <details id="${q.id}" class="group bg-witchly-base rounded-2xl border border-gray-700/50 overflow-hidden shadow-lg">
-                                <summary class="flex justify-between items-center p-6 cursor-pointer text-white font-sans font-bold list-none hover:bg-white/5 transition-colors">
-                                    <span>${q.title}</span>
-                                    <span class="transition-transform duration-300 group-open:rotate-180 bg-gray-800 w-8 h-8 flex items-center justify-center rounded-full"><i class="fa-solid fa-chevron-down text-gray-400 text-xs"></i></span>
-                                </summary>
-                                <div class="text-gray-400 p-6 pt-0 text-sm leading-relaxed border-t border-gray-800/0 group-open:border-gray-800 transition-all">
-                                    ${q.answer}
-                                </div>
-                            </details>
-                        `).join('');
-                    } else {
-                        container.innerHTML = '<p class="text-center text-gray-500">No questions found.</p>';
-                    }
-                }
-            }, 300);
-        });
-    </script>
 </body>
 </html>
