@@ -66,6 +66,19 @@
             box-shadow: 0 0 30px rgba(74, 222, 128, 0.15);
             transform: translateY(-8px);
         }
+        @keyframes float-pulse {
+            0%, 100% { transform: translateY(0); filter: brightness(1); }
+            50% { transform: translateY(-6px); filter: brightness(1.1); box-shadow: 0 15px 40px -10px rgba(0,0,0,0.5); }
+        }
+        .animate-float-pulse {
+            animation: float-pulse 3s ease-in-out infinite;
+            position: relative;
+            z-index: 10;
+        }
+        .animate-float-pulse:hover {
+            animation-play-state: paused;
+            transform: translateY(-6px);
+        }
     </style>
 </head>
 <body class="bg-witchly-base text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-witchly-primary selection:text-white">
@@ -166,18 +179,18 @@
 
             <div id="pricing-minecraft" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 animate-fade-in-up">
                 
-                <div id="plan-mc-trial" class="plan-card bg-witchly-surface/50 p-8 rounded-2xl border border-gray-700/50 transition-all flex flex-col relative group hover:bg-witchly-surface">
-                    <div class="absolute top-0 left-0 bg-yellow-400 text-black text-[10px] font-bold px-3 py-1.5 rounded-br-lg rounded-tl-xl z-10 font-mono">CODE: TESTDRIVE</div>
+                <div id="plan-mc-trial" class="plan-card bg-gradient-to-br from-witchly-surface to-witchly-base p-8 rounded-2xl border-2 border-dashed border-witchly-primary transition-all flex flex-col relative group animate-float-pulse">
+                    <div class="absolute -top-3 left-4 bg-witchly-primary text-white text-[10px] font-bold px-3 py-1 rounded-full z-10 uppercase tracking-widest shadow-lg">New Release</div>
                     <h3 class="text-xl font-bold text-white mt-4">Free Trial</h3>
-                    <p class="text-sm text-gray-400 mt-1 mb-6">24h Access. No Credit Card.</p>
+                    <p class="text-sm text-gray-400 mt-1 mb-6">24h Full Access. No Credit Card.</p>
                     <div class="text-3xl font-mono font-bold text-white mb-6">$0.00 <span class="text-sm text-gray-500 font-normal">/24h</span></div>
                     <ul class="space-y-4 mb-8 text-sm text-gray-400 flex-grow">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 2 GB RAM</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 10 GB NVMe Storage</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 100% CPU (1 Core)</li>
-                        <li class="flex items-center"><i class="fa-solid fa-user-group text-gray-500 mr-3 w-4"></i> 5 Player Slots Max</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-400 mr-3 w-4"></i> 2 GB RAM</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-400 mr-3 w-4"></i> 10 GB NVMe Storage</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-400 mr-3 w-4"></i> 100% CPU (1 Core)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-bolt text-witchly-primary mr-3 w-4"></i> Instant Deployment</li>
                     </ul>
-                    <a href="https://billing.witchly.host/products/free-trial/minecraft-trial-24h" class="w-full py-3 text-center border border-gray-600 rounded-xl text-white font-bold hover:bg-white hover:text-witchly-base transition-all">Claim Trial</a>
+                    <a href="#" onclick="claimTrial(event, 'https://billing.witchly.host/products/free-trial/minecraft-trial-24h')" class="w-full py-3 text-center bg-white/5 hover:bg-witchly-primary text-white font-bold rounded-xl border border-gray-600 hover:border-witchly-primary transition-all">Claim Instant Access</a>
                 </div>
 
                 <div id="plan-mc-4gb" class="plan-card bg-witchly-surface p-8 rounded-2xl border border-gray-700 transition-all flex flex-col relative group hover:border-witchly-primary/30">
@@ -229,17 +242,17 @@
 
             <div id="pricing-hytale" class="hidden grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 animate-fade-in-up">
                 
-                <div id="plan-hytale-trial" class="plan-card bg-witchly-surface/50 p-8 rounded-2xl border border-gray-700/50 transition-all flex flex-col relative group hover:bg-witchly-surface">
-                    <div class="absolute top-0 left-0 bg-yellow-400 text-black text-[10px] font-bold px-3 py-1.5 rounded-br-lg rounded-tl-xl z-10 font-mono">CODE: TESTDRIVE</div>
+                <div id="plan-hytale-trial" class="plan-card bg-gradient-to-br from-witchly-surface to-witchly-base p-8 rounded-2xl border-2 border-dashed border-cyan-500 transition-all flex flex-col relative group animate-float-pulse">
+                    <div class="absolute -top-3 left-4 bg-cyan-500 text-white text-[10px] font-bold px-3 py-1 rounded-full z-10 uppercase tracking-widest shadow-lg">Free Tier</div>
                     <h3 class="text-xl font-bold text-white mt-4">Free Trial</h3>
                     <p class="text-sm text-gray-400 mt-1 mb-6">24h Access. No Credit Card.</p>
-                    <div class="text-3xl font-mono font-bold text-white mb-6">$0.00 <span class="text-sm text-gray-500 font-normal">/6h</span></div>
+                    <div class="text-3xl font-mono font-bold text-white mb-6">$0.00 <span class="text-sm text-gray-500 font-normal">/24h</span></div>
                     <ul class="space-y-4 mb-8 text-sm text-gray-400 flex-grow">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 4 GB RAM</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 100% CPU (1 Core)</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 5 GB Storage</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-3 w-4"></i> 4 GB RAM</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-3 w-4"></i> 100% CPU (1 Core)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-3 w-4"></i> 5 GB Storage</li>
                     </ul>
-                    <a href="https://billing.witchly.host/products/free-trial/hytale-trial-24h" class="w-full py-3 text-center border border-gray-600 rounded-xl text-white font-bold hover:bg-white hover:text-witchly-base transition-all">Claim Trial</a>
+                    <a href="#" onclick="claimTrial(event, 'https://billing.witchly.host/products/free-trial/hytale-trial-24h')" class="w-full py-3 text-center bg-white/5 hover:bg-cyan-500 text-white font-bold rounded-xl border border-gray-700 hover:border-cyan-500 transition-all">Claim Instant Access</a>
                 </div>
 
                 <div id="plan-hytale-scout" class="plan-card bg-witchly-surface p-8 rounded-2xl border border-gray-700 transition-all flex flex-col relative group hover:border-cyan-400/50">
@@ -287,17 +300,17 @@
             </div>
 
             <div id="pricing-rust" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up">
-                <div id="plan-rust-trial" class="plan-card bg-witchly-surface/50 p-8 rounded-2xl border border-gray-700/50 transition-all flex flex-col relative group hover:bg-witchly-surface">
-                    <div class="absolute top-0 left-0 bg-yellow-400 text-black text-[10px] font-bold px-3 py-1.5 rounded-br-lg rounded-tl-xl z-10 font-mono">CODE: TESTDRIVE</div>
+                <div id="plan-rust-trial" class="plan-card bg-gradient-to-br from-witchly-surface to-witchly-base p-8 rounded-2xl border-2 border-dashed border-orange-500 transition-all flex flex-col relative group animate-float-pulse">
+                    <div class="absolute -top-3 left-4 bg-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-full z-10 uppercase tracking-widest shadow-lg">Free Tier</div>
                     <h3 class="text-xl font-bold text-white mt-4">Free Trial</h3>
-                    <p class="text-sm text-gray-400 mt-1 mb-6">24h Access.</p>
+                    <p class="text-sm text-gray-400 mt-1 mb-6">24h Access. No Credit Card.</p>
                     <div class="text-3xl font-mono font-bold text-white mb-6">$0.00 <span class="text-sm text-gray-500 font-normal">/24h</span></div>
                     <ul class="space-y-4 mb-8 text-sm text-gray-400 flex-grow">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 8 GB RAM</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 20 GB Storage</li>
-                        <li class="flex items-center"><i class="fa-solid fa-map text-gray-500 mr-3 w-4"></i> Map Size 3000 (Forced)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-orange-500 mr-3 w-4"></i> 8 GB RAM</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-orange-500 mr-3 w-4"></i> 20 GB Storage</li>
+                        <li class="flex items-center"><i class="fa-solid fa-map text-orange-500 mr-3 w-4"></i> Map Size 3000 (Forced)</li>
                     </ul>
-                    <a href="https://billing.witchly.host/products/free-trial/rust-trial-24h" class="w-full py-3 text-center border border-gray-600 rounded-xl text-white font-bold hover:bg-white hover:text-witchly-base transition-all">Claim Trial</a>
+                    <a href="#" onclick="claimTrial(event, 'https://billing.witchly.host/products/free-trial/rust-trial-24h')" class="w-full py-3 text-center bg-white/5 hover:bg-orange-500 text-white font-bold rounded-xl border border-gray-600 hover:border-orange-500 transition-all">Claim Instant Access</a>
                 </div>
 
                 <div id="plan-rust-10gb" class="plan-card bg-witchly-surface p-8 rounded-2xl border border-gray-700 hover:border-orange-500/50 transition-all relative flex flex-col">
@@ -328,17 +341,17 @@
             </div>
 
             <div id="pricing-palworld" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up">
-                <div id="plan-pal-trial" class="plan-card bg-witchly-surface/50 p-8 rounded-2xl border border-gray-700/50 transition-all flex flex-col relative group hover:bg-witchly-surface">
-                    <div class="absolute top-0 left-0 bg-yellow-400 text-black text-[10px] font-bold px-3 py-1.5 rounded-br-lg rounded-tl-xl z-10 font-mono">CODE: TESTDRIVE</div>
+                <div id="plan-pal-trial" class="plan-card bg-gradient-to-br from-witchly-surface to-witchly-base p-8 rounded-2xl border-2 border-dashed border-blue-500 transition-all flex flex-col relative group animate-float-pulse">
+                    <div class="absolute -top-3 left-4 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full z-10 uppercase tracking-widest shadow-lg">Free Tier</div>
                     <h3 class="text-xl font-bold text-white mt-4">Free Trial</h3>
-                    <p class="text-sm text-gray-400 mt-1 mb-6">24h Access.</p>
+                    <p class="text-sm text-gray-400 mt-1 mb-6">24h Access. No Credit Card.</p>
                     <div class="text-3xl font-mono font-bold text-white mb-6">$0.00 <span class="text-sm text-gray-500 font-normal">/24h</span></div>
                     <ul class="space-y-4 mb-8 text-sm text-gray-400 flex-grow">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 8 GB RAM</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gray-500 mr-3 w-4"></i> 20 GB Storage</li>
-                        <li class="flex items-center"><i class="fa-solid fa-ban text-gray-500 mr-3 w-4"></i> No Raids Allowed</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 mr-3 w-4"></i> 8 GB RAM</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 mr-3 w-4"></i> 20 GB Storage</li>
+                        <li class="flex items-center"><i class="fa-solid fa-ban text-blue-500 mr-3 w-4"></i> No Raids Allowed</li>
                     </ul>
-                    <a href="https://billing.witchly.host/products/free-trial/palworld-trial-24h" class="w-full py-3 text-center border border-gray-600 rounded-xl text-white font-bold hover:bg-white hover:text-witchly-base transition-all">Claim Trial</a>
+                    <a href="#" onclick="claimTrial(event, 'https://billing.witchly.host/products/free-trial/palworld-trial-24h')" class="w-full py-3 text-center bg-white/5 hover:bg-blue-500 text-white font-bold rounded-xl border border-gray-700 hover:border-blue-500 transition-all">Claim Instant Access</a>
                 </div>
 
                 <div id="plan-pal-10gb" class="plan-card bg-witchly-surface p-8 rounded-2xl border border-gray-700 hover:border-blue-500/50 transition-all relative flex flex-col">
@@ -407,6 +420,18 @@
             const urlParams = new URLSearchParams(window.location.search);
             const urlGame = urlParams.get('game');
             const urlRec = urlParams.get('rec');
+            const isTrial = urlParams.get('trial');
+
+            if (isTrial) {
+                setTimeout(() => {
+                    const trialCard = document.getElementById('plan-mc-trial');
+                    if(trialCard) {
+                        trialCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        trialCard.classList.add('border-witchly-primary', 'shadow-2xl', 'shadow-witchly-primary/20', 'scale-105');
+                        setTimeout(() => trialCard.classList.remove('scale-105'), 500);
+                    }
+                }, 600);
+            }
 
             if (urlGame) {
                 document.getElementById('calc-game').value = urlGame;

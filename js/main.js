@@ -98,3 +98,34 @@ function initializeCookieBanner() {
         });
     }
 }
+
+// Global Function for Free Trial Logic
+window.claimTrial = function(event, url) {
+    if(event) event.preventDefault();
+    const btn = event.currentTarget;
+    if(!btn) return;
+    
+    const originalText = btn.innerHTML;
+    
+    navigator.clipboard.writeText('TESTDRIVE').then(() => {
+        // Change Button State
+        btn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> Code Copied!';
+        // Remove old classes
+        btn.classList.remove('bg-white', 'text-witchly-base', 'hover:bg-gray-200', 'bg-white/5', 'hover:bg-witchly-primary', 'hover:bg-orange-500', 'hover:bg-blue-500', 'hover:bg-cyan-500', 'border-gray-600', 'border-gray-700');
+        // Add new success classes
+        btn.classList.add('bg-green-500', 'border-green-500', 'text-white', 'hover:bg-green-600');
+        
+        // Show Toast
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-6 py-3 rounded-full shadow-2xl border border-gray-700 z-50 flex items-center gap-3 animate-fade-in-up';
+        toast.innerHTML = '<i class="fa-solid fa-clipboard-check text-green-400"></i> <span>Coupon <strong>TESTDRIVE</strong> copied! Paste at checkout.</span>';
+        document.body.appendChild(toast);
+
+        // Redirect
+        setTimeout(() => {
+            window.location.href = url;
+        }, 1500);
+    }).catch(err => {
+        window.location.href = url;
+    });
+};
